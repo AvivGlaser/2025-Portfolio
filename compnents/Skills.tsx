@@ -1,13 +1,13 @@
-import reactLogo from "../assets/img/reactIcon.png";
+import reactLogo from "../assets/img/react.png";
 import javascriptLogo from "../assets/img/javascript.png";
 import typescriptLogo from "../assets/img/typescript.png";
 import reduxLogo from "../assets/img/redux.png";
-import expressJS from "../assets/img/express.png";
-import nodeJS from "../assets/img/nodejs.png";
-import docker from "../assets/img/docker.png";
-import materialuUI from "../assets/img/m-ui.png";
-import mySQL from "../assets/img/mysql.png";
-import Git from "../assets/img/git.svg";
+import expressJsLogo from "../assets/img/express.png";
+import nodeJSLogo from "../assets/img/nodejs.png";
+import dockerLogo from "../assets/img/docker.png";
+import materialUILogo from "../assets/img/m-ui.png";
+import mySQLLogo from "../assets/img/mysql.png";
+import GitLogo from "../assets/img/git.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../assets/img/color-sharp.png";
@@ -45,16 +45,16 @@ export const Skills = () => {
     { img: typescriptLogo, title: "Typescript ", alt: "Typescript-logo" },
     { img: reduxLogo, title: "Redux", alt: "Redux-logo" },
     {
-      img: expressJS,
+      img: expressJsLogo,
       title: "Express.JS",
       alt: "express.js-logo",
       className: "express-js-logo",
     },
-    { img: materialuUI, title: "Material-UI", alt: "material-ui-logo" },
-    { img: nodeJS, title: "Node.JS", alt: "node-js-logo" },
-    { img: docker, title: "Docker", alt: "docker-logo" },
-    { img: mySQL, title: "MySQL", alt: "mySQL-logo" },
-    { img: Git, title: "Git", alt: "Git-logo", className: "git-logo" },
+    { img: materialUILogo, title: "Material-UI", alt: "material-ui-logo" },
+    { img: nodeJSLogo, title: "Node.JS", alt: "node-js-logo" },
+    { img: dockerLogo, title: "Docker", alt: "docker-logo" },
+    { img: mySQLLogo, title: "MySQL", alt: "mySQL-logo" },
+    { img: GitLogo, title: "Git", alt: "Git-logo", className: "git-logo" },
   ];
 
   return (

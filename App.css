@@ -86,6 +86,15 @@ select:focus {
 }
 
 /************ Navbar Css ************/
+
+.navbar-nav {
+  margin-left: 5px;
+}
+
+.logo.navbar-brand {
+  max-width: 110px;
+  margin: 0;
+}
 nav.navbar {
   padding: 18px 0;
   position: fixed;
@@ -98,50 +107,73 @@ nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
-nav.navbar a.navbar-brand {
-  width: 9%;
-}
+
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  color: #fff !important;
+  color: #fff;
   letter-spacing: 0.8px;
   padding: 0 25px;
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0.75;
 }
+
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
+}
+
+.email-me {
+  min-width: 180px;
+  margin-left: 0px !important;
+}
+.gmail-icon {
+  background: linear-gradient(
+    38deg,
+    #db4437 42%,
+    #0f9d58 55%,
+    #f4b400 7%,
+    #4285f4 73%
+  );
+  margin-left: 2px;
+  border-radius: 50%;
+  border: 1px solid white;
+  padding: 4px;
 }
 span.navbar-text {
   display: flex;
   align-items: center;
 }
+.social-icon:hover {
+  transition: 0.3s ease-in-out;
+  transform: scale(1.1);
+  filter: sepia(1);
+}
 .social-icon {
   display: inline-block;
   margin-left: 14px;
+  cursor: pointer;
 }
 .social-icon a {
   width: 42px;
   height: 42px;
-  background: rgba(217, 217, 217, 0.1);
   display: inline-flex;
   border-radius: 50%;
   margin-right: 6px;
   align-items: center;
   justify-content: center;
-  line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .social-icon a::before {
   content: "";
   width: 42px;
   height: 42px;
   position: absolute;
-  background-color: #ffffff;
   border-radius: 50%;
   transform: scale(0);
   transition: 0.3s ease-in-out;
+}
+
+.social-icon path {
+  fill: white;
 }
 .social-icon a:hover::before {
   transform: scale(1);
@@ -151,10 +183,7 @@ span.navbar-text {
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
-.social-icon a:hover img {
-  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%)
-    hue-rotate(346deg) brightness(95%) contrast(86%);
-}
+
 .navbar-text button {
   font-weight: 700;
   color: #fff;
@@ -188,10 +217,6 @@ span.navbar-text {
   border-bottom: 1px solid white;
 }
 
-.git-logo,
-.express-js-logo {
-  filter: invert(1);
-}
 .navbar-text button:hover::before {
   content: "";
   width: 100%;
@@ -357,12 +382,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 40%;
   z-index: -4;
 }
-
+.express-js-logo,
+.git-logo {
+  filter: invert(1);
+}
 /************ Projects Css ************/
 .project {
   padding: 80px 0;
   position: relative;
-  background-color: black;
 }
 h2 {
   font-size: 45px;
@@ -485,7 +512,6 @@ h2 {
   z-index: -4;
 }
 
-/* CSS */
 .project-link {
   margin: 8px;
   align-items: center;
@@ -543,82 +569,6 @@ h2 {
   .project-link {
     padding: 0 40px;
   }
-}
-
-/************ Projects Css ************/
-.contact {
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
-  padding: 60px 0 200px 0;
-}
-.contact img {
-  width: 92%;
-}
-h2 {
-  font-size: 45px;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-.contact form input,
-.contact form textarea {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  color: #fff;
-  margin: 0 0 8px 0;
-  padding: 18px 26px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  transition: 0.3s ease-in-out;
-}
-.contact form input:focus,
-.contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
-  color: #121212;
-}
-.contact form input::placeholder,
-.contact form textarea::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-}
-.contact form input:focus::placeholder,
-.contact form textarea:focus::placeholder {
-  color: #121212;
-  opacity: 0.8;
-}
-.contact form button {
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
-  font-size: 18px;
-  margin-top: 25px;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
-}
-.contact form button span {
-  z-index: 1;
-  position: relative;
-}
-.contact form button:hover {
-  color: #fff;
-}
-.contact form button::before {
-  content: "";
-  background: #121212;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-.contact form button:hover::before {
-  width: 100%;
 }
 
 /************ Footer Css ************/
@@ -700,7 +650,27 @@ h2 {
   margin-top: 20px;
 }
 
-/* TimeLine Page  */
+/* Recommandations CSS  */
+#recommendations * {
+  text-align: center;
+}
+
+#recommendations img {
+  width: 50px;
+}
+#recommendations button {
+  background: linear-gradient(
+    90.21deg,
+    #aa367c -5.91%,
+    #4a2fbd 111.58%
+  ) !important;
+  border: none !important;
+}
+.react-multi-carousel-track .bg-white {
+  background-color: transparent !important;
+}
+
+/* TimeLine CSS  */
 
 .vertical-timeline-element-subtitle {
   display: inline-block;
@@ -709,7 +679,6 @@ h2 {
 .timeline-image {
   border: 1px solid #8d6d6d;
   padding: 1px;
-  float: right;
   width: 50px;
   display: inline-block;
 }
@@ -720,9 +689,96 @@ h2 {
   padding: 2em 3em !important;
 }
 
+/* ACCESSIBILITTY CSS  */
+.toggle-container {
+  position: fixed;
+  bottom: 1em;
+  transform: translateX(-50%) translateY(100%);
+  width: 340px !important;
+  background-color: #2b2424;
+  border-radius: 1em;
+  padding: 0.8em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s; /* Delay visibility change */
+  z-index: 1050; /* Ensure it appears above other elements */
+}
+
+/* When the menu is visible, apply smooth transition */
+.toggle-container.show {
+  opacity: 1;
+  visibility: visible; /* Make it visible */
+  transform: translateX(-50%) translateY(0);
+  flex-direction: column;
+  gap: 0.4em;
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0s; /* Immediate visibility */
+}
+
+/* Hide the menu with smooth transition */
+.toggle-container.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(100%);
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
+}
+
+.cancel-button {
+  padding: 0.4em 1em !important;
+  font-size: 0.8em !important;
+  background-color: #b81010 !important;
+  color: white !important;
+  border-radius: 1em !important;
+  transition: background-color 0.3s ease !important;
+  margin: 3px auto !important;
+  display: block !important;
+  border-color: unset !important;
+}
+
+.cancel-button:hover {
+  background-color: #fd2222 !important;
+  border-color: unset !important;
+}
+
+.toggle-container .col {
+  padding-left: 25px;
+  padding-top: 5px;
+}
+
+.toggle-button,
+.black-button,
+.white-button {
+  padding: 0.6em !important;
+  border-radius: 0.5em !important;
+  font-size: 0.8em !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  transition: background-color 0.2s ease-in-out !important;
+  width: 100% !important;
+  border: none !important;
+}
+
+.black-button {
+  background-color: #aa367c !important;
+  color: white !important;
+}
+
+.black-button:hover {
+  background-color: #8a2a63 !important;
+}
+
+.white-button {
+  background-color: #4a2fbd !important;
+  color: white !important;
+}
+
+.white-button:hover {
+  background-color: #3a2596 !important;
+}
+
 .accessibility-logo {
-  width: 40px;
-  height: 40px;
+  width: 35px;
 }
 
 .date {
@@ -730,6 +786,7 @@ h2 {
 }
 
 .logo-img {
+  min-width: 75px;
   filter: invert(1) !important;
 }
 #description {
@@ -772,75 +829,6 @@ h2 {
   color: beige;
 }
 
-/* offline section  */
-.hobby-section {
-  padding: 4rem 0;
-  background: radial-gradient(circle at center, #1a1a1a, #111);
-  text-align: center;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.hobby-section h2 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.hobby-section p {
-  font-size: 1.4rem;
-  opacity: 0.8;
-  margin-bottom: 2rem;
-}
-
-.hobby-carousel-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-}
-
-.hobby-carousel {
-  width: 80%;
-  max-width: 700px;
-  border-radius: 15px;
-  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.hobby-card {
-  background: rgba(20, 20, 20, 0.8);
-  color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  cursor: pointer;
-}
-
-.hobby-card:hover {
-  transform: scale(1.1) rotateY(10deg);
-  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
-}
-
-.hobby-card h3 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.hobby-card p {
-  font-size: 1.2rem;
-  opacity: 0.8;
-}
-
 @media only screen and (max-width: 1700px) {
   .vertical-timeline-element-date {
     display: block !important;
@@ -848,4 +836,149 @@ h2 {
     color: rgb(255, 255, 255);
     margin-top: 1.5em;
   }
+}
+
+/* HUSTLE CSS  */
+.hustle-section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hustle-section .header {
+  margin-bottom: 2rem;
+}
+
+.hustle-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hustle-section .hustle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 700px; /* Increase max-width for better spacing */
+}
+
+.hustle-section .hustle-item {
+  padding: 1.5rem;
+  background-color: #7c1c56; /* Set item background to primary color */
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 1.125rem;
+}
+
+.hustle-section .hustle-item:hover {
+  transform: translateY(-8px);
+  background-color: #3c279b; /* Change to secondary color on hover */
+}
+
+.hustle-section .hustle-item a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hustle-section .hustle-item p {
+  margin: 0;
+  color: white; /* Ensure text is white */
+}
+
+.hustle-section .add-hustle {
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background-color: #3c279b; /* Secondary color */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hustle-section .add-hustle:hover {
+  background-color: #7c1c56; /* Change to primary color on hover */
+  transform: translateY(-4px);
+}
+
+.hustle-section .hustle-item a:hover {
+  color: white;
+}
+
+
+.hustle-section .hustle-item a:hover {
+  color: #7c1c56; /* Link hover color */
+}
+
+/* BLACK CONTRAST  */
+
+.tooltip.show {
+  z-index: 99999999999999 !important;
+}
+
+body.blackContrast .date.vertical-timeline-element-date {
+  opacity: 1 !important;
+  color: white !important;
+}
+body.blackContrast nav.navbar .navbar-nav .nav-link.navbar-link {
+  opacity: 1 !important;
+}
+
+body.blackContrast .project .nav.nav-pills .nav-link::before {
+  background: black !important;
+}
+
+body.blackContrast .toggle-container.show.container,
+body.blackContrast #root .App nav.navbar {
+  background-color: black !important;
+}
+body.blackContrast #recommendations .container button,
+body.blackContrast .vertical-timeline-element-icon.shadow-size-small.bounce-in {
+  background: gold !important;
+}
+
+/* body.blackContrast #accessibility-logo, */
+body.blackContrast #timeline a,
+body.blackContrast .toggle-container.show.container button {
+  background-color: gold !important;
+  color: black !important;
+}
+
+body.blackContrast #recommendations .container button::before,
+body.blackContrast #recommendations .container button {
+  color: black !important;
+}
+
+body.blackContrast footer p,
+body.blackContrast .animate__animated p,
+body.blackContrast .skill-bx p,
+body.blackContrast .banner p {
+  color: white !important;
+}
+body.blackContrast a.active {
+  color: gold !important;
+}
+
+body.blackContrast footer {
+  border-top: 1px solid white !important;
+}
+body.blackContrast .navbar {
+  border-bottom: 1px solid white !important;
 }

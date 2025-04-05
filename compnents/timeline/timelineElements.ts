@@ -1,6 +1,6 @@
 import equalWeb from "../../assets/img/equalWeb.png";
 import johnBryce from "../../assets/img/johnBryce.jpeg";
-import BGU from "../../assets/img/BGU.png";
+import BGU from "../../assets/img/bgu.png";
 
 export interface ITimeLineElements {
   id: number;

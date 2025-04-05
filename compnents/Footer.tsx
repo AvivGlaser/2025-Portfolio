@@ -1,57 +1,43 @@
+import { JSX } from "react";
 import { Container, Row, Col, Tooltip, OverlayTrigger } from "react-bootstrap";
-import logo from "../assets/img/ag-logo.svg";
-import linkedin from "../assets/img/linkedin.svg";
-import certificate from "../assets/img/certificate.svg";
-import cvIcon from "../assets/img/cvIcon.png";
-import github from "../assets/img/github.svg";
-// import { MailchimpForm } from "./MailChimpForm";
+import logo from "../assets/img/aviv-glaser.svg";
+import { FileEarmarkPersonFill, AwardFill } from "react-bootstrap-icons";
 //@ts-ignore
 import pdfFile from "../assets/files/cv.pdf";
 
-export const Footer = () => {
+export function Footer() {
   interface ILinks {
     href: string;
-    img: string;
+    icon: JSX.Element;
     alt: string;
     className?: string;
   }
 
   const links: Array<ILinks> = [
     {
-      href: "https://www.linkedin.com/in/aviv-glaser-226656202/",
-      img: linkedin,
-      alt: "My Linkedin",
-    },
-    {
       href: "https://www.linkedin.com/in/aviv-glaser-226656202/overlay/1734883343928/single-media-viewer/?profileId=ACoAADO1pr4Bbcy48f40WijHAWsNVbKCfphKkW8",
-      img: certificate,
+      icon: <AwardFill size={25} />,
       alt: "Full-Stack Web Development course Certificate",
     },
     {
-      href: "https://github.com/AvivGlaser",
-      img: github,
-      alt: "My Github",
-    },
-    {
       href: pdfFile,
-      img: cvIcon,
+      icon: <FileEarmarkPersonFill size={25} />,
       alt: "My CV",
       className: "cv",
     },
   ];
 
-  const handleDownload = () => {
+  function handleDownload() {
     const link = document.createElement("a");
     link.href = pdfFile;
     link.download = "cv.pdf";
     link.click();
-  };
+  }
 
   return (
     <footer className="footer">
       <Container>
         <Row className="align-items-center">
-          {/* <MailchimpForm /> */}
           <Col size={12} sm={6}>
             <img
               src={logo}
@@ -61,30 +47,29 @@ export const Footer = () => {
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">
             <div className="social-icon">
-              {links.map((link: ILinks) => (
-                <OverlayTrigger
-                  key={link.alt}
-                  placement="top"
-                  overlay={
-                    <Tooltip id={`tooltip-${link.alt}`}>{link.alt}</Tooltip>
-                  }
-                >
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={
-                      link.className === "cv" ? handleDownload : undefined
+              {links.map(function (link) {
+                return (
+                  <OverlayTrigger
+                    key={link.alt}
+                    placement="top"
+                    overlay={
+                      <Tooltip id={`tooltip-${link.alt}`}>{link.alt}</Tooltip>
                     }
                   >
-                    <img
-                      src={link.img}
-                      alt={link.alt}
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={
+                        link.className === "cv" ? handleDownload : undefined
+                      }
                       className={link.className}
-                    />
-                  </a>
-                </OverlayTrigger>
-              ))}
+                    >
+                      {link.icon}
+                    </a>
+                  </OverlayTrigger>
+                );
+              })}
             </div>
             <p>Aviv Glaser Copyright 2025. All Rights Reserved</p>
           </Col>
@@ -92,4 +77,4 @@ export const Footer = () => {
       </Container>
     </footer>
   );
-};
+}

@@ -5,24 +5,24 @@ import { NavBar } from "./compnents/NavBar";
 import { Banner } from "./compnents/Banner";
 import { Skills } from "./compnents/Skills";
 import { Projects } from "./compnents/projects/Projects";
-import { Recommendations  } from "./compnents/Recommendations";
+import { Recommendations } from "./compnents/Recommendations";
 import { Footer } from "./compnents/Footer";
 import CareerTimeline from "./compnents/timeline/Timeline";
-import AccessibilityMenu from "./compnents/AccessibilityMenu";
-import Offline from "./compnents/Offline";
+import Hustle from "./compnents/Hustle";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <AccessibilityMenu /> */}
       <Banner />
-      <Skills />
-      <CareerTimeline />
-      <Projects />
-      <Recommendations />
-      <Offline/>
-      <Footer />
+      <main>
+        <Skills />
+        <CareerTimeline />
+        <Projects />
+        <Recommendations />
+        <Hustle />
+        <Footer />
+      </main>
     </div>
   );
 }

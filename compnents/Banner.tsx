@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, OverlayTrigger, Tooltip } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
-import { ArrowRightCircle } from "react-bootstrap-icons";
+import { Linkedin } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
-import linkedin from "../assets/img/linkedin.svg";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -93,7 +92,7 @@ export const Banner = () => {
                   <OverlayTrigger
                     children={
                       <button onClick={() => openLinkedInMessage()}>
-                        Let’s Connect <ArrowRightCircle size={25} />
+                        Let’s Connect  <Linkedin size={20}/>
                       </button>
                     }
                     overlay={<Tooltip>Message me in Linkedin</Tooltip>}
