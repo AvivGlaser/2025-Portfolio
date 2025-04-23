@@ -1,0 +1,351 @@
+/* MENU */
+
+body.screenReader *:focus {
+  border: 2px solid rgb(29, 247, 0) !important;
+  outline: none !important;
+}
+
+body.screenReader .proj-imgbx:focus-within .hidden-text,
+.screen-reader-element {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+}
+
+body .accessibility-menu-dialog button.active {
+  border: 2px solid red !important;
+}
+
+.accessibility-menu-dialog .close {
+  float: right !important;
+  margin: 1.5px !important;
+  opacity: 1 !important;
+}
+
+.accessibility-menu-dialog {
+  position: fixed;
+  bottom: 1em;
+  transform: translateX(-50%) translateY(100%);
+  width: 345px !important;
+  background-color: #2b2424;
+  border-radius: 1em;
+  padding: 0.8em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s; /* Delay visibility change */
+  z-index: 1050; /* Ensure it appears above other elements */
+}
+
+.accessibility-menu-dialog.show {
+  opacity: 1;
+  visibility: visible; /* Make it visible */
+  transform: translateX(-50%) translateY(0);
+  flex-direction: column;
+  gap: 0.4em;
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0s; /* Immediate visibility */
+}
+
+.accessibility-menu-dialog.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(100%);
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
+}
+
+.accessibility-menu-dialog .row {
+  display: inline-flex !important;
+}
+
+.cancel-button {
+  padding: 0.4em 1em !important;
+  font-size: 0.8em !important;
+  background-color: #b81010 !important;
+  color: white !important;
+  border-radius: 1em !important;
+  transition: background-color 0.3s ease !important;
+  margin: 10px !important;
+  display: block !important;
+  border-color: unset !important;
+  float: left !important;
+}
+
+.cancel-button:hover {
+  background-color: #fd2222 !important;
+  border-color: unset !important;
+}
+
+.accessibility-menu-dialog .col {
+  padding-left: 25px;
+  padding-top: 5px;
+}
+
+.accessibility-menu-dialog > .row:has(.cancel-button) {
+  max-width: 90%;
+}
+.accessibility-menu-dialog > .container > .row > button {
+  background-color: #3c279b;
+  border: none !important;
+  border-radius: 10px;
+  width: 135px;
+}
+.accessibility-menu-dialog > .container > .row {
+  margin: 5px !important;
+}
+
+.accessibility-logo {
+  width: 35px;
+}
+
+/* BLACK  */
+
+body.blackContrast .date.vertical-timeline-element-date {
+  opacity: 1 !important;
+  color: white !important;
+}
+body.blackContrast nav.navbar .navbar-nav .nav-link.navbar-link {
+  opacity: 1 !important;
+}
+
+/* BACKGROUND  */
+
+body.blackContrast .project .nav.nav-pills .nav-link::before {
+  background: black !important;
+}
+
+body.blackContrast .accessibility-menu-dialog.show.container,
+body.blackContrast #root .App nav.navbar {
+  background-color: black !important;
+}
+body.blackContrast #recommendations .container button,
+body.blackContrast .vertical-timeline-element-icon.shadow-size-small.bounce-in {
+  background: gold !important;
+}
+
+body.blackContrast #timeline a,
+body.blackContrast .accessibility-menu-dialog.show.container button {
+  background-color: gold !important;
+  color: black !important;
+}
+
+/* COLOR  */
+body.blackContrast #recommendations a,
+body.blackContrast #recommendations .container button::before,
+body.blackContrast #recommendations .container button {
+  color: black !important;
+}
+
+body.blackContrast footer p,
+body.blackContrast .animate__animated p,
+body.blackContrast .skill-bx p,
+body.blackContrast .banner p {
+  color: white !important;
+}
+body.blackContrast a.active {
+  font-weight: bold !important;
+  color: gold !important;
+}
+
+/* BORDER */
+
+body:not(.whiteContrast) .accessibility-menu-dialog.show.container {
+  border: 1.5px solid !important;
+}
+
+body.blackContrast footer {
+  border-top: 1px solid white !important;
+}
+body.blackContrast .navbar {
+  border-bottom: 1px solid white !important;
+}
+
+/* WHITE   */
+
+.whiteContrast .banner {
+  background-image: url("/src//assets/img/white-banner-bg.png");
+}
+body.whiteContrast .date.vertical-timeline-element-date {
+  opacity: 1 !important;
+  color: white !important;
+}
+body.whiteContrast nav.navbar .navbar-nav .nav-link.navbar-link {
+  opacity: 1 !important;
+}
+/* BACKGROUND */
+
+body.whiteContrast section#recommendations {
+  background-image: url("/src/assets/img/color-sharp.png");
+  background-repeat: no-repeat;
+}
+body.whiteContrast section#what-not {
+  background-image: url("/src/assets/img/color-sharp2.png");
+}
+
+body.whiteContrast .banner .tagline {
+  background: linear-gradient(
+    90.21deg,
+    rgb(245 245 245 / 50%) -5.91%,
+    rgb(43 79 196 / 50%) 111.58%
+  );
+}
+body.whiteContrast .proj-imgbx::before {
+  background: linear-gradient(
+    90.21deg,
+    #092966 -5.91%,
+    #4a2fbd 111.58%
+  ) !important;
+}
+
+body.whiteContrast .vertical-timeline::before {
+  background: black !important;
+}
+
+body.whiteContrast .accessibility-menu-dialog.show.container,
+body.whiteContrast #root .App nav.navbar {
+  border: 1.5px solid black !important;
+  background-color: white !important;
+}
+
+body.whiteContrast .skill-bx,
+body.whiteContrast #recommendations .container button,
+body.whiteContrast .vertical-timeline-element-icon.shadow-size-small.bounce-in {
+  background: midnightblue !important;
+}
+
+body.whiteContrast .project .nav.nav-pills .nav-link.active,
+body.whiteContrast
+  .vertical-timeline-element-content.bounce-in
+  *:not(a, button, .date, .vertical-timeline-element-content-arrow),
+body.whiteContrast .vertical-timeline-element-content.bounce-in,
+body.whiteContrast #projects .container .row .nav-link.active::before,
+body.whiteContrast #projects .container .row .nav-link.active,
+body.whiteContrast
+  .accessibility-menu-dialog.show.container
+  button:not(.close) {
+  background-color: midnightblue !important;
+  color: white !important;
+}
+
+body.whiteContrast #timeline a {
+  background-color: white !important;
+  color: midnightblue;
+}
+
+/* COLOR  */
+
+body.whiteContrast svg * {
+  fill: white !important;
+}
+
+body.whiteContrast .what-now path,
+body.whiteContrast .banner path,
+body.whiteContrast .animate__animated.animate__fadeIn > button > svg > path {
+  fill: black !important;
+}
+body.whiteContrast footer p,
+body.whiteContrast .skill-bx p,
+body.whiteContrast span.date,
+body.whiteContrast #recommendations .container button::before,
+body.whiteContrast #recommendations .container button {
+  color: white !important;
+}
+
+body.whiteContrast .project .nav.nav-pills .nav-link:not(.active),
+body.whiteContrast .vertical-timeline-element-content.bounce-in .date,
+body.whiteContrast .what-now a.activity-item,
+body.whiteContrast section:not(#skills, #timeline, #projects) h3,
+body.whiteContrast section:not(#skills) h2,
+body.whiteContrast main p,
+body.whiteContrast h1,
+body.whiteContrast .banner button,
+body.whiteContrast .banner .tagline,
+body.whiteContrast .banner p,
+body.whiteContrast .animate__animated.animate__fadeIn > button,
+body.whiteContrast .txt-rotate > .wrap,
+body.whiteContrast .animate__animated > span.tagline,
+body.whiteContrast .animate__animated p,
+body.whiteContrast .animate__animated h1,
+body.whiteContrast .email-me,
+body.whiteContrast header .nav-link {
+  color: black !important;
+}
+
+body.whiteContrast #what-now a,
+body.whiteContrast a.active {
+  font-weight: bold !important;
+  color: midnightblue !important;
+}
+
+/* BORDER  */
+
+body.whiteContrast .vertical-timeline-element-content-arrow {
+  background-color: transparent !important;
+  border: 7px solid transparent !important;
+  border-right: 7px solid #000000 !important;
+}
+
+body.whiteContrast #projects-tabs-tab-Deployed {
+  border-top-left-radius: 40%;
+  border-bottom-left-radius: 40%;
+}
+body.whiteContrast #projects-tabs-tab-Future {
+  border-top-right-radius: 40%;
+  border-bottom-right-radius: 40%;
+}
+
+body.whiteContrast .project .nav.nav-pills .nav-link:not(.active),
+body.whiteContrast .what-now .activity-content,
+body.whiteContrast .email-me {
+  border: 1px solid black !important;
+}
+
+body.whiteContrast footer {
+  border-top: 1px solid black !important;
+}
+body.whiteContrast .navbar {
+  border-bottom: 1px solid black !important;
+}
+
+/* FILTER  */
+
+body.whiteContrast .logo-img {
+  filter: none !important;
+}
+
+body:not(.blackContrast, .whiteContrast) .accessibility-menu-dialog .close {
+  filter: invert(1) !important;
+}
+body.whiteContrast header div.social-icon > a,
+body.whiteContrast .accessibility-logo {
+  filter: invert(1) !important;
+}
+
+body.whiteContrast .footer path {
+  fill: black !important;
+}
+body.whiteContrast .footer {
+  background-image: url("/src/assets/img/footer-bg-white.png");
+}
+
+/* SCREEN READER  */
+
+.screenReader .proj-imgbx:focus-within .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+
+.screenReader div:focus-within .proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.screenReader .banner img {
+  animation: unset !important;
+}
+
+
