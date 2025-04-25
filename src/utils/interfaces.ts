@@ -31,6 +31,7 @@ export interface IRecommendation {
   role: string;
   text: string;
   img: string;
+  letter: string
 }
 
 export interface IActivities {

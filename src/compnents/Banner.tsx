@@ -85,15 +85,18 @@ export function Banner() {
                     </h1>
                     <p>
                       Web Developer with 2.5 years of hands-on experience in an
-                      agile, fast-paced startup environment. Proficient in JavaScript, React,
-                       Node, state management, automated testing, RESTful APIs. Looking for
-                      Development or Solution Engineer roles in
-                      Central District
+                      agile, fast-paced startup environment. Proficient in
+                      JavaScript, React, Node, state management, automated
+                      testing, RESTful APIs. Looking for Development or Solution
+                      Engineer roles in Central District
                     </p>
                     <OverlayTrigger
                       overlay={<Tooltip>Message me in Linkedin</Tooltip>}
                     >
-                      <button onClick={openLinkedInMessage}>
+                      <button
+                        onClick={openLinkedInMessage}
+                        aria-label="Message me on Linkedin - External link"
+                      >
                         Let’s Connect <Linkedin size={20} />
                       </button>
                     </OverlayTrigger>

@@ -119,7 +119,7 @@ export function NavBar() {
                   >
                     <button
                       role="link"
-                      aria-label="External link to Gmail"
+                      aria-label="Emain me on Gmail - External link"
                       className="email-me"
                       onClick={() => {
                         window.open(
