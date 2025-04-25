@@ -3,6 +3,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ron from "../assets/img/ron.jpeg";
 import naor from "../assets/img/naor.jpeg";
+import alona from "../assets/img/alona.jpeg";
+import fabian from "../assets/img/fabian.png";
+import alona_rec from "../assets/img/rec-letter-alona.jpeg";
 import { IRecommendation } from "../utils/interfaces";
 
 export function Recommendations() {
@@ -12,12 +15,28 @@ export function Recommendations() {
       role: "Senior Project Manager at EqualWeb",
       text: "Besides being very thorough and responsible, Aviv makes me laugh a lot — my days are so much more enjoyable with him around.",
       img: ron,
+      letter: "/rec-letter-ron.docx",
     },
     {
       name: "Naor Bacharlia",
       role: "Project Manager at EqualWeb",
-      text: "I know I can count on Aviv with every task I give him. Just be careful and don't move anything on his desk — he can't function otherwise!",
+      text: "Aviv communicates client-side issues to our customers with detailed documentation, as well as resolving urgent accessibility matters on the spot.",
       img: naor,
+      letter: "/rec-letter-naor.docx",
+    },
+    {
+      name: "Alona Elazari",
+      role: "Head of Education at Kibbutz Sa'ar",
+      text: "During his work, Aviv built personal and meaningful connections with his apprentices, showing responsibility, dedication, and initiative.",
+      img: alona,
+      letter: alona_rec,
+    },
+    {
+      name: "Fabian Bensik",
+      role: "Head of Education at Kibbutz Shoval",
+      text: "Aviv led by example serving children and their parents needs. He did so with warmth, calmness, attentive listening, and genuine care.",
+      img: fabian,
+      letter: "/rec-letter-fabian.doc",
     },
   ];
 
@@ -39,7 +58,7 @@ export function Recommendations() {
           responsive={responsive}
           infinite
           autoPlay
-          autoPlaySpeed={4500}
+          autoPlaySpeed={5000}
           className="max-w-xl mx-auto recommendations-carousel"
         >
           {recommendations.map((rec, index) => (
@@ -58,8 +77,11 @@ export function Recommendations() {
                 className="co-workers-image"
               ></img>{" "}
               <br />
-              <Button className="contact-reco">
-                <a href="/rec-letter-ron.docx" download>
+              <Button
+                className="contact-reco"
+                aria-label={`Contact ${rec.name} & watch full letter`}
+              >
+                <a href={rec.letter} download>
                   Full Letter & Contact Info
                 </a>
               </Button>
