@@ -3,8 +3,9 @@ import { ChevronLeft, ChevronRight } from "react-bootstrap-icons";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import colorSharp from "../../assets/img/color-sharp.png";
-import { ILogoArray } from "../../utils/interfaces";
+import { ILogo } from "../../utils/interfaces";
 import { responsive, techSkills } from "./skillsData";
+
 
 export function Skills() {
 
@@ -31,7 +32,7 @@ export function Skills() {
               <p>My tech stack toolbox</p>
               <Carousel
                 responsive={responsive}
-                infinite={false}
+                infinite={true}
                 autoPlay={true}
                 autoPlaySpeed={2000}
                 customButtonGroup={<ButtonGroup />}
@@ -39,7 +40,7 @@ export function Skills() {
                 arrows={false}
                 className="owl-carousel owl-theme skill-slider"
               >
-                {techSkills.map((skill: ILogoArray) => (
+                {techSkills.map((skill: ILogo) => (
                   <div className="skill-container" key={skill.alt}>
                     <img
                       src={skill.img}

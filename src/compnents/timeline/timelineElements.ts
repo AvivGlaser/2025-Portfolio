@@ -2,7 +2,7 @@ import equalWeb from "../../assets/img/equalWeb.png";
 import johnBryce from "../../assets/img/johnBryce.jpeg";
 import BGU from "../../assets/img/bgu.png";
 import scrimba from "../../assets/img/scrimba.jpeg";
-import BA from "../../assets/img/B.A.jpeg"
+import BA from "../../assets/img/B.A.jpeg";
 import { ITimeLineElements } from "../../utils/interfaces";
 
 const timelineElements: Array<ITimeLineElements> = [
@@ -12,12 +12,13 @@ const timelineElements: Array<ITimeLineElements> = [
     location: "scrimba.com",
     description:
       "Start the new upcoming 'Learn Node.js' course by my favorite online learning platform, Scrimba.com",
-    buttonText: "Take a peek",
+    buttonText: " Take a peek ",
     date: "April 14th",
     icon: "school",
     image: scrimba,
     alt: "Scrimba web logo image",
     href: "https://scrimba.com/learn-nodejs-c00ho9qqh6",
+    hiddenText: " External link to scrimba.com ",
   },
   {
     id: 1,
@@ -30,7 +31,7 @@ const timelineElements: Array<ITimeLineElements> = [
     icon: "work",
     image: equalWeb,
     alt: "Equal web logo image",
-    href:'#recommendations'
+    href: "#recommendations",
   },
   {
     id: 2,
@@ -43,7 +44,8 @@ const timelineElements: Array<ITimeLineElements> = [
     icon: "school",
     image: johnBryce,
     alt: "John Bryce logo image",
-    href: "https://www.linkedin.com/in/aviv-glaser-226656202/overlay/1734883343928/single-media-viewer/?profileId=ACoAADO1pr4Bbcy48f40WijHAWsNVbKCfphKkW8"
+    href: "https://www.linkedin.com/in/aviv-glaser-226656202/overlay/1734883343928/single-media-viewer/?profileId=ACoAADO1pr4Bbcy48f40WijHAWsNVbKCfphKkW8",
+    hiddenText: " External link to linkedin.com ",
   },
   {
     id: 3,
@@ -56,7 +58,8 @@ const timelineElements: Array<ITimeLineElements> = [
     icon: "school",
     image: BGU,
     alt: "Ben Gurion University logo image",
-    href: BA
+    href: BA,
+    hiddenText: " Open degree image on a new tab ",
   },
 ];
 

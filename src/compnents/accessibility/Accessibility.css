@@ -1,41 +1,38 @@
 /* MENU */
 
-body .accessibility-menu-dialog button.active {
-  border: 2px solid red !important;
-}
-
 .accessibility-menu-dialog .close {
   float: right !important;
   margin: 1.5px !important;
   opacity: 1 !important;
 }
 
+.accessibility-menu-dialog .dialog-button:not(.cancel-button) {
+  font-size: 0.85em !important;
+}
 .accessibility-menu-dialog {
-  left: 15%;
-  width: min(90%, 22em);
-  max-width: 100%;
+  max-width: 200px;
   box-sizing: border-box;
   position: fixed;
   bottom: 1em;
+  left: 7em;
   transform: translateX(-50%) translateY(100%);
-  /* width: 345px !important; */
   background-color: #2b2424;
   border-radius: 1em;
   padding: 0.8em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  visibility: hidden; /* Initially hidden */
-  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s; /* Delay visibility change */
-  z-index: 1050; /* Ensure it appears above other elements */
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
+  z-index: 1050;
 }
 
 .accessibility-menu-dialog.show {
   opacity: 1;
-  visibility: visible; /* Make it visible */
+  visibility: visible;
   transform: translateX(-50%) translateY(0);
   flex-direction: column;
   gap: 0.4em;
-  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0s; /* Immediate visibility */
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0s;
 }
 
 .accessibility-menu-dialog.hide {
@@ -45,26 +42,30 @@ body .accessibility-menu-dialog button.active {
   transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
 }
 
-.accessibility-menu-dialog .row {
-  display: inline-flex !important;
+.accessibility-menu-dialog .row:has(.cancel-button) {
+  margin-top: 3.5%;
+  margin-left: 1.5%;
 }
 
 .cancel-button {
-  padding: 0.4em 1em !important;
-  font-size: 0.8em !important;
-  background-color: #b81010 !important;
-  color: white !important;
-  border-radius: 1em !important;
-  transition: background-color 0.3s ease !important;
-  margin: 10px !important;
-  display: block !important;
-  border-color: unset !important;
-  float: left !important;
+  width: 50%;
+  padding: 0.4em 1em;
+  font-size: 0.8em;
+  background-color: #b81010;
+  color: white;
+  border-radius: 1em;
+  transition: background-color 0.3s ease;
+  display: block;
+  border-color: unset;
+  float: left;
+}
+.btn-primary.active:focus {
+  box-shadow: unset !important;
 }
 
 .cancel-button:hover {
-  background-color: #fd2222 !important;
-  border-color: unset !important;
+  background-color: #fd2222;
+  border-color: unset;
 }
 
 .accessibility-menu-dialog .col {
@@ -75,18 +76,36 @@ body .accessibility-menu-dialog button.active {
 .accessibility-menu-dialog > .row:has(.cancel-button) {
   max-width: 90%;
 }
-.accessibility-menu-dialog > .container > .row > button {
-  background-color: #3c279b;
-  border: none !important;
+body:not(.blackContrast, .whiteContrast)
+  .accessibility-menu-dialog
+  > .container
+  button.dialog-button {
+  background: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  ) !important;
+}
+
+.accessibility-menu-dialog .dialog-button:not(.cancel-button, .close, .active) {
+  border: none;
   border-radius: 10px;
   width: 135px;
+  margin: 1.75%;
 }
-.accessibility-menu-dialog > .container > .row {
-  margin: 5px !important;
+.accessibility-menu-dialog > .container {
+  display: grid;
+  align-content: space-around;
+  justify-content: center;
+}
+
+button.social-icon.accessibility-button {
+  margin-right: 1%;
+  padding: 0;
 }
 
 .accessibility-logo {
-  width: 35px;
+  width: 25px;
 }
 
 /* BLACK  */
@@ -112,6 +131,16 @@ body.blackContrast #root .App nav.navbar {
 body.blackContrast #recommendations .container button,
 body.blackContrast .vertical-timeline-element-icon.shadow-size-small.bounce-in {
   background: gold !important;
+}
+
+body.blackContrast
+  nav
+  > .container
+  > .accessibility-menu-dialog
+  > .container
+  > button.active {
+  background-color: black !important;
+  color: gold !important;
 }
 
 body.blackContrast #timeline a,
@@ -151,6 +180,26 @@ body.blackContrast .navbar {
   border-bottom: 1px solid white !important;
 }
 
+body:not(.whiteContrast, .screenReader)
+  .accessibility-menu-dialog
+  button.active {
+  border: 2px solid white !important;
+  border-color: white !important;
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+
+body.blackContrast.screenReader
+  .accessibility-menu-dialog
+  button.dialog-button:not(.close, .cancel-button) {
+  /* border: 2px solid black !important; */
+  /* border-color: black !important; */
+  border-radius: 10px !important;
+  width: 135px !important;
+  margin: 1.75% !important;
+}
+
 /* WHITE   */
 
 .whiteContrast .banner {
@@ -188,8 +237,23 @@ body.whiteContrast .proj-imgbx::before {
   ) !important;
 }
 
+/* body.whiteContrast header > nav > .container > .logo > .logo-img {
+  background-color: #000000d9;
+  border-radius: 50%;
+} */
+
 body.whiteContrast .vertical-timeline::before {
   background: black !important;
+}
+
+body.whiteContrast
+  nav
+  > .container
+  > .accessibility-menu-dialog
+  > .container
+  > button.active {
+  background-color: white !important;
+  color: midnightblue !important;
 }
 
 body.whiteContrast .accessibility-menu-dialog.show.container,
@@ -223,8 +287,15 @@ body.whiteContrast #timeline a {
   color: midnightblue;
 }
 
+body.whiteContrast .nav-pills > .nav-item {
+  background-color: rgb(221 214 214 / 49%) !important;
+}
+
 body.whiteContrast .what-now-title {
-  text-shadow:  0 20px rgb(94 98 115 / 80%) !important;
+  text-shadow: 0 6px rgb(94 98 115 / 33%) !important;
+}
+body.whiteContrast .activity-content {
+  border: 1px solid black !important;
 }
 
 /* COLOR  */
@@ -274,22 +345,30 @@ body.whiteContrast a.active {
 
 /* BORDER  */
 
+body.whiteContrast:not(.blackContrast, .screenReader)
+  .accessibility-menu-dialog
+  button.active {
+  border: 2px solid black !important;
+  border-color: black !important;
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+body.whiteContrast.screenReader .accessibility-menu-dialog button.active {
+  /* border: 2px solid black !important; */
+  /* border-color: black !important; */
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+
 body.whiteContrast .vertical-timeline-element-content-arrow {
   background-color: transparent !important;
   border: 7px solid transparent !important;
   border-right: 7px solid #000000 !important;
 }
 
-body.whiteContrast #projects-tabs-tab-Deployed {
-  border-top-left-radius: 40%;
-  border-bottom-left-radius: 40%;
-}
-body.whiteContrast #projects-tabs-tab-Future {
-  border-top-right-radius: 40%;
-  border-bottom-right-radius: 40%;
-}
-
-body.whiteContrast .project .nav.nav-pills .nav-link:not(.active),
+/* body.whiteContrast #basic-navbar-nav .navbar-text > .social-icon, */
 body.whiteContrast .what-now .activity-content,
 body.whiteContrast .email-me {
   border: 1px solid black !important;
@@ -325,9 +404,50 @@ body.whiteContrast .footer {
 
 /* SCREEN READER  */
 
+.screenReader button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.screenReader .cancel-button:focus {
+  background-color: #b81010 !important;
+}
+
 .screenReader .proj-imgbx:focus-within .proj-txtx {
   top: 50%;
   opacity: 1;
+}
+
+.screenReader .proj-imgbx:focus-within .proj-txtx {
+  background-color: black !important;
+}
+
+.screenReader #recommendations div.react-multi-carousel-list button,
+.screenReader .carousel-button-group > button.carousel-arrow {
+  display: none !important;
+}
+.screenReader .react-multi-carousel-list {
+  overflow: hidden !important;
+}
+
+.screenReader #recommendations div.react-multi-carousel-list button,
+li.react-multi-carousel-item[data-index="4"],
+.screenReader #recommendations div.react-multi-carousel-list button,
+li.react-multi-carousel-item[data-index="5"],
+.screenReader #recommendations div.react-multi-carousel-list button,
+li.react-multi-carousel-item[data-index="6"],
+.screenReader #recommendations div.react-multi-carousel-list button,
+li.react-multi-carousel-item[data-index="7"],
+.screenReader #recommendations div.react-multi-carousel-list button,
+li.react-multi-carousel-item[data-index="8"] {
+  display: none !important;
+}
+
+.screenReader #recommendations div.react-multi-carousel-list,
+.screenReader #recommendations ul.react-multi-carousel-track,
+.screenReader .owl-carousel.skill-slider > ul,
+.screenReader .owl-carousel.skill-slider {
+  transform: unset !important;
+  transition: unset !important;
 }
 
 .screenReader div:focus-within .proj-imgbx::before {
@@ -352,6 +472,26 @@ body.screenReader *:focus {
 body.screenReader .proj-imgbx:focus-within .hidden-text,
 .screen-reader-element {
   opacity: 0;
-  display: none;
-  visibility: hidden;
+  position: absolute;
+  width: 1;
+  height: 1;
+  padding: 0;
+  margin: -1;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*  Large Font */
+body.largeFont .proj-txtx span {
+  font-size: 22px !important;
+}
+body.largeFont .activity-item a,
+body.largeFont .date,
+body.largeFont nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-size: 17.5px !important;
+}
+body.largeFont p {
+  font-size: xx-large !important;
 }
