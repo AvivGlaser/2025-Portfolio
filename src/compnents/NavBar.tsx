@@ -41,7 +41,6 @@ export function NavBar() {
   }, []);
 
   function onUpdateActiveLink(value: string) {
-    debugger
     setActiveLink(value);
   }
 
