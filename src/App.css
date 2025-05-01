@@ -1,3 +1,24 @@
+/************ Mobile ************/
+
+body.mobile nav.navbar {
+  width: 100%;
+}
+
+body.mobile .navbar > .container {
+  justify-content: unset !important;
+}
+
+body.mobile .navbar-expand-md:has(.show) {
+  background-color: #121212;
+}
+body.mobile.whiteContrast nav.navbar .navbar-toggler-icon {
+  border-color: black;
+}
+body.mobile.whiteContrast nav.navbar .navbar-toggler-icon:after,
+body.mobile.whiteContrast nav.navbar .navbar-toggler-icon:before {
+  background-color: black !important;
+}
+
 /************ Custom Font ************/
 @font-face {
   font-family: Centra;
@@ -25,6 +46,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  --line-color: none !important;
 }
 
 body {
@@ -110,40 +132,25 @@ body:not(.whiteContrast) section:not(.banner) {
   z-index: 99999 !important;
 }
 /************ Navbar  ************/
+body:not(.mobile) #basic-navbar-nav {
+  justify-content: space-around;
+}
 
 body .scrolled > .container > a > .logo-img {
   max-width: 65px;
-  /* filter: invert(1); */
   padding: 1%;
 }
 body nav:not(.scrolled) .logo-img {
   padding: 1%;
   max-width: 90px;
-  /* filter: invert(1); */
+}
+body:not(.mobile) .navbar > .container {
+  justify-content: space-evenly !important;
 }
 
 .navbar > .container > .navbar-brand {
   margin: 0;
 }
-body.mobile .navbar > .container {
-  justify-content: normal !important;
-}
-
-body:not(.mobile) #basic-navbar-nav {
-  justify-content: space-around;
-}
-
-body.mobile nav.navbar {
-  width: 90% !important;
-}
-
-body.mobile .navbar-expand-md:has(.show) {
-  background-color: #121212;
-}
-
-/* body.mobile nav.navbar > .container {
-  justify-content: space-evenly !important;
-} */
 
 nav.navbar {
   padding: 1%;
@@ -153,9 +160,7 @@ nav.navbar {
   z-index: 9999;
   transition: 0.32s ease-in-out;
 }
-body:not(.mobile) .navbar > .container {
-  justify-content: space-evenly !important;
-}
+
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
@@ -469,7 +474,7 @@ body:not(.whiteContrast) .banner p {
 
 #timeline .button {
   text-decoration: none;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.5em;
   border-radius: 5px;
   color: white;
 }

@@ -265,7 +265,7 @@ body.whiteContrast
 
 body.whiteContrast .accessibility-menu-dialog.show.container,
 body.whiteContrast #root .App nav.navbar {
-  border: 1.5px solid black !important;
+  /* border: 1.5px solid black !important; */
   background-color: white !important;
 }
 
@@ -320,7 +320,9 @@ body.whiteContrast #recommendations .container button {
 }
 
 body.whiteContrast .project .nav.nav-pills .nav-link:not(.active),
-body.whiteContrast .vertical-timeline-element-content.bounce-in .date,
+body.whiteContrast:not(.mobile)
+  .vertical-timeline-element-content.bounce-in
+  .date,
 body.whiteContrast .what-now a.activity-item,
 body.whiteContrast section:not(#skills, #timeline, #projects) h3,
 body.whiteContrast section:not(#skills) h2,
