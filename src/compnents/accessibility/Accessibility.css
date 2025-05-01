@@ -1,4 +1,4 @@
-/* MENU */
+/* ACCESIBILITY MENU */
 
 .accessibility-menu-dialog .close {
   float: right !important;
@@ -24,6 +24,10 @@
   visibility: hidden;
   transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
   z-index: 1050;
+}
+
+body:not(.whiteContrast) .accessibility-menu-dialog.show.container {
+  border: 1.5px solid !important;
 }
 
 .accessibility-menu-dialog.show {
@@ -108,7 +112,7 @@ button.social-icon.accessibility-button {
   width: 25px;
 }
 
-/* BLACK  */
+/* ~~~~~~~~~~ BLACK CONTRAST ~~~~~~~~~~~  */
 
 body.blackContrast .date.vertical-timeline-element-date {
   opacity: 1 !important;
@@ -124,6 +128,7 @@ body.blackContrast .project .nav.nav-pills .nav-link::before {
   background: black !important;
 }
 
+.blackContrast .proj-imgbx:focus-within .proj-txtx,
 body.blackContrast .accessibility-menu-dialog.show.container,
 body.blackContrast #root .App nav.navbar {
   background-color: black !important;
@@ -169,10 +174,6 @@ body.blackContrast a.active {
 
 /* BORDER */
 
-body:not(.whiteContrast) .accessibility-menu-dialog.show.container {
-  border: 1.5px solid !important;
-}
-
 body.blackContrast footer {
   border-top: 1px solid white !important;
 }
@@ -201,14 +202,12 @@ body.whiteContrast.screenReader .btn.btn-primary:not(:focus) {
 body.blackContrast.screenReader
   .accessibility-menu-dialog
   button.dialog-button:not(.close, .cancel-button) {
-  /* border: 2px solid black !important; */
-  /* border-color: white !important; */
   border-radius: 10px !important;
   width: 135px !important;
   margin: 1.75% !important;
 }
 
-/* WHITE   */
+/* ~~~~~~~~~~~~~~~~~~~ WHITE CONTRAST ~~~~~~~~~~~~~~~~~~*/
 
 .whiteContrast .banner {
   background-image: url("/src//assets/img/white-banner-bg.png");
@@ -220,6 +219,7 @@ body.whiteContrast .date.vertical-timeline-element-date {
 body.whiteContrast nav.navbar .navbar-nav .nav-link.navbar-link {
   opacity: 1 !important;
 }
+
 /* BACKGROUND */
 
 body.whiteContrast section#recommendations {
@@ -245,10 +245,9 @@ body.whiteContrast .proj-imgbx::before {
   ) !important;
 }
 
-/* body.whiteContrast header > nav > .container > .logo > .logo-img {
-  background-color: #000000d9;
-  border-radius: 50%;
-} */
+.whiteContrast .proj-imgbx:focus-within .proj-txtx {
+  background-color: black !important;
+}
 
 body.whiteContrast .vertical-timeline::before {
   background: black !important;
@@ -299,15 +298,10 @@ body.whiteContrast .nav-pills > .nav-item {
   background-color: rgb(221 214 214 / 49%) !important;
 }
 
+/* COLOR  */
 body.whiteContrast .what-now-title {
   text-shadow: 0 6px rgb(94 98 115 / 33%) !important;
 }
-body.whiteContrast .activity-content {
-  border: 1px solid black !important;
-}
-
-/* COLOR  */
-
 body.whiteContrast svg * {
   fill: white !important;
 }
@@ -353,6 +347,10 @@ body.whiteContrast a.active {
 
 /* BORDER  */
 
+body.whiteContrast .activity-content {
+  border: 1px solid black !important;
+}
+
 body.whiteContrast:not(.blackContrast, .screenReader)
   .accessibility-menu-dialog
   button.active {
@@ -363,8 +361,6 @@ body.whiteContrast:not(.blackContrast, .screenReader)
   margin: 1.75%;
 }
 body.whiteContrast.screenReader .accessibility-menu-dialog button.active {
-  /* border: 2px solid black !important; */
-  /* border-color: black !important; */
   border-radius: 10px;
   width: 135px;
   margin: 1.75%;
@@ -376,7 +372,6 @@ body.whiteContrast .vertical-timeline-element-content-arrow {
   border-right: 7px solid #000000 !important;
 }
 
-/* body.whiteContrast #basic-navbar-nav .navbar-text > .social-icon, */
 body.whiteContrast .what-now .activity-content,
 body.whiteContrast .email-me {
   border: 1px solid black !important;
@@ -406,11 +401,17 @@ body.whiteContrast .accessibility-logo {
 body.whiteContrast .footer path {
   fill: black !important;
 }
+
 body.whiteContrast .footer {
   background-image: url("/src/assets/img/footer-bg-white.png");
 }
 
-/* SCREEN READER  */
+/* ~~~~~~~~~~~~~ SCREEN READER  ~~~~~~~~~~~~~~~~~~~*/
+
+body.screenReader *:focus {
+  border: 2px solid rgb(29, 247, 0) !important;
+  outline: none !important;
+}
 
 .screenReader button:focus {
   outline: none !important;
@@ -423,11 +424,6 @@ body.whiteContrast .footer {
 .screenReader .proj-imgbx:focus-within .proj-txtx {
   top: 50%;
   opacity: 1;
-}
-
-.whiteContrast .proj-imgbx:focus-within .proj-txtx,
-.blackContrast .proj-imgbx:focus-within .proj-txtx {
-  background-color: black !important;
 }
 
 .screenReader
@@ -477,11 +473,6 @@ body.whiteContrast .footer {
   animation: unset !important;
 }
 
-body.screenReader *:focus {
-  border: 2px solid rgb(29, 247, 0) !important;
-  outline: none !important;
-}
-
 body.screenReader .proj-imgbx:focus-within .hidden-text,
 .screen-reader-element {
   opacity: 0;
@@ -496,7 +487,7 @@ body.screenReader .proj-imgbx:focus-within .hidden-text,
   border: 0;
 }
 
-/*  Large Font */
+/*  ~~~~~~~~~~~~~~ Large Font ~~~~~~~~~~~~~~~ */
 body.largeFont .proj-txtx span {
   font-size: 22px !important;
 }
