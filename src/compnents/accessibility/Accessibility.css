@@ -263,9 +263,14 @@ body.whiteContrast
   color: midnightblue !important;
 }
 
-body.whiteContrast .accessibility-menu-dialog.show.container,
 body.whiteContrast #root .App nav.navbar {
-  /* border: 1.5px solid black !important; */
+  border-bottom: 1px solid black !important;
+  background-color: white !important;
+
+}
+
+body.whiteContrast .accessibility-menu-dialog.show.container {
+  border: 1.5px solid black !important;
   background-color: white !important;
 }
 
@@ -299,9 +304,7 @@ body.whiteContrast .nav-pills > .nav-item {
 }
 
 /* COLOR  */
-body.whiteContrast .what-now-title {
-  text-shadow: 0 6px rgb(94 98 115 / 33%) !important;
-}
+
 body.whiteContrast svg * {
   fill: white !important;
 }

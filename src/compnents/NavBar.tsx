@@ -126,9 +126,10 @@ export function NavBar() {
               <span className="navbar-toggler-icon"></span>
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
+              <Nav role="menu">
                 {linksData.map((link) => (
                   <Nav.Link
+                    role={"menuitem"}
                     key={link.href}
                     href={link.href}
                     className={

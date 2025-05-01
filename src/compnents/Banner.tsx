@@ -86,7 +86,7 @@ export function Banner() {
                     <p>
                       Web Developer with 2.5 years of hands-on experience in an
                       agile, fast-paced startup environment. Proficient in
-                      JavaScript, React, Node, state management, automated
+                      JavaScript, React, Node.js, state management, automated
                       testing, RESTful APIs. Looking for Development or Solution
                       Engineer roles in Central District
                     </p>

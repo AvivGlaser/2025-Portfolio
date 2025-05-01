@@ -5,7 +5,15 @@ body.mobile nav.navbar {
 }
 
 body.mobile .navbar > .container {
-  justify-content: unset !important;
+  justify-content: flex-start;
+  gap: min(3%, 0.5rem);
+  padding-inline: 1.5rem;
+}
+
+body.mobile .navbar.scrolled > .container {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: min(3%, 2.5rem);
 }
 
 body.mobile .navbar-expand-md:has(.show) {
@@ -46,7 +54,7 @@ body.mobile.whiteContrast nav.navbar .navbar-toggler-icon:before {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
-  --line-color: none !important;
+  /* --line-color: none !important; */
 }
 
 body {
@@ -111,7 +119,7 @@ select:focus {
 }
 
 main h2 {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: 700;
   text-align: center;
 }
@@ -473,6 +481,7 @@ body:not(.whiteContrast) .banner p {
 /***************** TimeLine ***************/
 
 #timeline .button {
+  display: inline-block;
   text-decoration: none;
   padding: 0.5em 0.5em;
   border-radius: 5px;
@@ -768,10 +777,9 @@ body:not(.whiteContrast) .what-now .activity-item a {
 
 .what-now-title {
   color: #ffe4e8;
-  font-size: 3.5rem;
+  font-size: 35px;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  text-shadow: 0 0 20px rgba(255, 228, 232, 0.192) !important;
 }
 
 .what-now-subtitle {
