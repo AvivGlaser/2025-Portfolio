@@ -15,12 +15,14 @@ export function Footer() {
       href: "https://www.linkedin.com/in/aviv-glaser-226656202/overlay/1734883343928/single-media-viewer/?profileId=ACoAADO1pr4Bbcy48f40WijHAWsNVbKCfphKkW8",
       icon: <AwardFill size={25} />,
       alt: "Full-Stack Web Development course Certificate",
+      hiddenText: "Full-Stack Web Development course Certificate - External link to linkedin.com"
     },
     {
       href: pdfFile,
       icon: <FileEarmarkPersonFill size={25} />,
       alt: "My CV",
       className: "cv",
+      hiddenText: "Download my CV - PDF File"
     },
   ];
 
@@ -62,6 +64,7 @@ export function Footer() {
                       className={link.className}
                     >
                       {link.icon}
+                      <span className="screen-reader-element"> &nbsp; {link.hiddenText}</span>
                     </a>
                   </OverlayTrigger>
                 </div>

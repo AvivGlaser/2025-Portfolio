@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Accessibility from "../assets/img/accessibility.png";
 import logo from "../assets/img/aviv-glaser.png";
-// import whiteLogo from "../assets/img/aviv-glaser-white-contrast.png";
 import { Github, Linkedin, Google } from "react-bootstrap-icons";
 import AccessibilityMenu from "./accessibility/AccessibilityMenu";
 import {
@@ -20,7 +19,7 @@ export function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  handleResize()
+  handleResize();
   function toggleVisibility() {
     setIsVisible((prev) => !prev);
     setTimeout(() => {
@@ -42,6 +41,7 @@ export function NavBar() {
   }, []);
 
   function onUpdateActiveLink(value: string) {
+    debugger
     setActiveLink(value);
   }
 
@@ -137,18 +137,14 @@ export function NavBar() {
                         ? "active navbar-link"
                         : "navbar-link"
                     }
-                    onClick={(e) => {
+                    onClick={() => {
                       onUpdateActiveLink(link.label.toLowerCase());
                     }}
                     onKeyDown={(e) => {
                       handleMainMenu(e);
                     }}
-                    onKeyDownCapture={(e) => {
-                      handleMainMenu(e);
-                    }}
                   >
                     {link.label}
-                    <span className="screen-reader-element">{link.label}</span>
                   </Nav.Link>
                 ))}
               </Nav>

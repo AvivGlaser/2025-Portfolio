@@ -2,7 +2,7 @@ import { IAccessibilityButtons } from "./interfaces";
 import whiteLogo from "../assets/img/aviv-glaser-white-contrast.png";
 import blackLogo from "../assets/img/aviv-glaser.png";
 
-const focusableElements: string = `h1, h2, h3, h4, h5, h6, a:not([disabled],.nav-link:not(.active) ), button:not([disabled]), button:not([aria-disabeld=true]), input:not([disabled]), textarea:not([disabled]), select:not([disabled])`;
+const focusableElements: string = `h1, h2, h3, h4, h5, h6, a:not([disabled],.nav-link:not(.active) ), button:not([disabled], .recommendation-letter,[aria-disabeld=true]), input:not([disabled]), textarea:not([disabled]), select:not([disabled])`;
 const positiveTabIndexValue: number = 20;
 const negeativeTabIndexValue: number = -1;
 
@@ -142,22 +142,21 @@ function negetiveTabIndexForMenuLinks() {
 }
 
 export function handleMainMenu(e: any): void {
-  debugger;
   if (e.key === "ArrowRight" && e.target.nextSibling) {
     negetiveTabIndexForMenuLinks();
-    e.target.nextSibling.tabIndex = 0;
+    e.target.nextSibling.tabIndex = 20;
     e.target.nextSibling.focus();
   } else if (e.key === "ArrowLeft" && e.target.previousSibling) {
     negetiveTabIndexForMenuLinks();
-    e.target.previousSibling.tabIndex = 0;
+    e.target.previousSibling.tabIndex = 20;
     e.target.previousSibling.focus();
   } else if (e.key === "ArrowRight" && !e.target.nextSibling) {
     negetiveTabIndexForMenuLinks();
-    e.target.parentElement.firstChild.tabIndex = 0;
+    e.target.parentElement.firstChild.tabIndex = 20;
     e.target.parentElement.firstChild.focus();
   } else if (e.key === "ArrowLeft" && !e.target.previousSibling) {
     negetiveTabIndexForMenuLinks();
-    e.target.parentElement.lastChild.tabIndex = 0;
+    e.target.parentElement.lastChild.tabIndex = 20;
     e.target.parentElement.lastChild.focus();
   }
 }

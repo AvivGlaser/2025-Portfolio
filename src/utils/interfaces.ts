@@ -24,6 +24,7 @@ export interface ILinks {
   icon: JSX.Element;
   alt: string;
   className?: string;
+  hiddenText?: string
 }
 
 export interface IRecommendation {
@@ -32,6 +33,7 @@ export interface IRecommendation {
   text: string;
   img: string;
   letter: string;
+  hiddenText?: string;
 }
 
 export interface IActivities {
