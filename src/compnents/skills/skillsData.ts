@@ -9,7 +9,7 @@ import materialUILogo from "../../assets/img/m-ui.png";
 import mySQLLogo from "../../assets/img/mysql.png";
 import GitLogo from "../../assets/img/git.svg";
 import jQueryLogo from "../../assets/img/jQuery.png";
-import { ILogoArray } from "../../utils/interfaces";
+import { ILogo } from "../../utils/interfaces";
 
 export const responsive = {
   superLargeDesktop: { breakpoint: { max: 4000, min: 3000 }, items: 5 },
@@ -18,7 +18,7 @@ export const responsive = {
   mobile: { breakpoint: { max: 464, min: 0 }, items: 1 },
 };
 
-export const techSkills: Array<ILogoArray> = [
+export const techSkills: Array<ILogo> = [
   { img: reactLogo, title: "React", alt: "react-logo" },
   { img: javascriptLogo, title: "Javascript", alt: "javascript-logo" },
   { img: typescriptLogo, title: "Typescript", alt: "typescript-logo" },

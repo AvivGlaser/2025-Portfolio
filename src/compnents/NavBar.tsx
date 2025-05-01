@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Accessibility from "../assets/img/accessibility.png";
 import logo from "../assets/img/aviv-glaser.png";
+// import whiteLogo from "../assets/img/aviv-glaser-white-contrast.png";
 import { Github, Linkedin, Google } from "react-bootstrap-icons";
 import AccessibilityMenu from "./accessibility/AccessibilityMenu";
 import {
@@ -12,13 +13,14 @@ import {
   OverlayTrigger,
   Button,
 } from "react-bootstrap";
-import { handleFocusInDialog } from "../utils/screenReader";
+import { handleFocusInDialog, handleMainMenu } from "../utils/screenReader";
+import { handleResize } from "../utils/view";
 
 export function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-
+  handleResize()
   function toggleVisibility() {
     setIsVisible((prev) => !prev);
     setTimeout(() => {
@@ -48,7 +50,7 @@ export function NavBar() {
     { href: "#skills", label: "Skills" },
     { href: "#timeline", label: "Timeline" },
     { href: "#projects", label: "Projects" },
-    { href: "#what-now", label: "What now?" },
+    { href: "#what-now", label: "Current" },
     { href: "#recommendations", label: "Recommendations" },
   ];
 
@@ -91,23 +93,62 @@ export function NavBar() {
               isVisible={isVisible}
               setIsVisible={setIsVisible}
             />
+            <div className="social-icon linkedin-icon">
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip>My Linkedin</Tooltip>}
+              >
+                <a
+                  aria-label="My Linkedin - External link"
+                  href="https://www.linkedin.com/in/aviv-glaser-226656202/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin size={20} />
+                </a>
+              </OverlayTrigger>
+            </div>
+            <div className="social-icon github-icon">
+              <OverlayTrigger
+                placement="bottom"
+                overlay={<Tooltip>My GitHub</Tooltip>}
+              >
+                <a
+                  aria-label="My GitHub - External link"
+                  href="https://github.com/AvivGlaser"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github size={20} />
+                </a>
+              </OverlayTrigger>
+            </div>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
               <span className="navbar-toggler-icon"></span>
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav>
-                {linksData.map(({ href, label }) => (
+                {linksData.map((link) => (
                   <Nav.Link
-                    key={href}
-                    href={href}
+                    key={link.href}
+                    href={link.href}
                     className={
-                      activeLink === label.toLowerCase()
+                      activeLink === link.label.toLowerCase()
                         ? "active navbar-link"
                         : "navbar-link"
                     }
-                    onClick={() => onUpdateActiveLink(label.toLowerCase())}
+                    onClick={(e) => {
+                      onUpdateActiveLink(link.label.toLowerCase());
+                    }}
+                    onKeyDown={(e) => {
+                      handleMainMenu(e);
+                    }}
+                    onKeyDownCapture={(e) => {
+                      handleMainMenu(e);
+                    }}
                   >
-                    {label}
+                    {link.label}
+                    <span className="screen-reader-element">{link.label}</span>
                   </Nav.Link>
                 ))}
               </Nav>
@@ -136,34 +177,6 @@ export function NavBar() {
                 </div>
               </span>
             </Navbar.Collapse>
-            <div className="social-icon linkedin-icon">
-              <OverlayTrigger
-                placement="bottom"
-                overlay={<Tooltip>My Linkedin</Tooltip>}
-              >
-                <a
-                  href="https://www.linkedin.com/in/aviv-glaser-226656202/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin size={20} />
-                </a>
-              </OverlayTrigger>
-            </div>
-            <div className="social-icon github-icon">
-              <OverlayTrigger
-                placement="bottom"
-                overlay={<Tooltip>My GitHub</Tooltip>}
-              >
-                <a
-                  href="https://github.com/AvivGlaser"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github size={20} />
-                </a>
-              </OverlayTrigger>
-            </div>
           </Container>
         </Navbar>
       </header>

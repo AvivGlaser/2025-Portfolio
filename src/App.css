@@ -77,9 +77,8 @@ textarea:focus,
 select:focus {
   outline: none;
 }
-
-.tooltip.show {
-  z-index: 99999999999999 !important;
+.btn-primary:active:focus {
+  box-shadow: none !important;
 }
 
 @media (min-width: 1700px) {
@@ -107,38 +106,64 @@ body:not(.whiteContrast) section:not(.banner) {
   background: linear-gradient(81deg, #0f021cd9, #0a090a) !important;
 }
 
+.tooltip {
+  z-index: 99999 !important;
+}
 /************ Navbar  ************/
 
-.logo-img {
+body .scrolled > .container > a > .logo-img {
+  max-width: 65px;
+  /* filter: invert(1); */
+  padding: 1%;
+}
+body nav:not(.scrolled) .logo-img {
+  padding: 1%;
   max-width: 90px;
-  min-width: 75px;
-  filter: invert(1) !important;
+  /* filter: invert(1); */
 }
 
-.navbar-nav {
-  margin-left: 5px;
-}
-
-.logo.navbar-brand {
-  max-width: 110px;
+.navbar > .container > .navbar-brand {
   margin: 0;
 }
+body.mobile .navbar > .container {
+  justify-content: normal !important;
+}
+
+body:not(.mobile) #basic-navbar-nav {
+  justify-content: space-around;
+}
+
+body.mobile nav.navbar {
+  width: 90% !important;
+}
+
+body.mobile nav.navbar > .container {
+  justify-content: space-evenly !important;
+}
+
 nav.navbar {
-  padding: 18px 0;
+  padding: 1%;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 9999;
   transition: 0.32s ease-in-out;
 }
+body:not(.mobile) .navbar > .container {
+  justify-content: space-evenly !important;
+}
 nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
 .navbar .btn.btn-primary:not(.dialog-button) {
-  background: inherit !important;
-  border-color: inherit !important;
-  border: none !important;
+  background: inherit;
+  border-color: inherit;
+  border: none;
+}
+
+header .logo.navbar-brand {
+  margin-right: 1%;
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
@@ -155,10 +180,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
 }
 
-.email-me {
-  min-width: 180px;
-  margin-left: 0px !important;
-}
 .gmail-icon {
   background: linear-gradient(
     38deg,
@@ -181,17 +202,19 @@ span.navbar-text {
   transform: scale(1.1);
   filter: sepia(1);
 }
+header .social-icon.github-icon,
+header .social-icon.linkedin-icon {
+  margin-top: 0.5%;
+}
 .social-icon {
   display: inline-block;
-  margin-left: 14px;
+  margin-left: 25px;
   cursor: pointer;
 }
 .social-icon a {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40x;
   display: inline-flex;
-  border-radius: 50%;
-  margin-right: 6px;
   align-items: center;
   justify-content: center;
 }
@@ -200,7 +223,6 @@ span.navbar-text {
   width: 42px;
   height: 42px;
   position: absolute;
-  border-radius: 50%;
   transform: scale(0);
   transition: 0.3s ease-in-out;
 }
@@ -218,16 +240,21 @@ span.navbar-text {
 }
 
 .navbar-text button {
-  font-weight: 700;
+  font-weight: 400;
   color: #fff;
   border: 1px solid #fff;
-  padding: 18px 34px;
+  padding: 15px;
   font-size: 18px;
-  margin-left: 18px;
+  /* margin-left: 18px; */
   position: relative;
   background-color: transparent;
   transition: 0.3s ease-in-out;
 }
+
+.email-me {
+  min-width: 160px;
+}
+
 .navbar-text button span {
   z-index: 1;
 }
@@ -398,7 +425,7 @@ body:not(.whiteContrast) .banner p {
   position: relative;
 }
 .skill-slider .skill-container img {
-  width: 50%;
+  width: 35%;
   margin: 0 auto 15px auto;
 }
 .background-image-left {
@@ -708,8 +735,6 @@ body:not(.whiteContrast) .project .nav.nav-pills .nav-link::before {
   }
 }
 
-
-
 /* WHAT-NOW?  */
 body:not(.whiteContrast) .what-now .activity-item a {
   color: #e6dde2;
@@ -753,7 +778,14 @@ body:not(.whiteContrast) .what-now .activity-item a {
   gap: 2rem;
   padding: 2rem;
 }
+.activity-item a.activity-link {
+  bottom: 0.6rem;
+  position: fixed;
+}
 
+.activity-item > .activity-content *:not(.activity-icon) {
+  margin: 1.5%;
+}
 .activity-item {
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
@@ -793,7 +825,6 @@ body:not(.whiteContrast) .what-now .activity-item a {
 
 .activity-icon {
   font-size: 2.5rem;
-  margin-bottom: 1.5rem;
   opacity: 0.9;
 }
 
@@ -801,7 +832,6 @@ body:not(.whiteContrast) .what-now .activity-item a {
   color: #ffe4e8;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
 }
 
 .activity-description {
@@ -839,7 +869,7 @@ body:not(.whiteContrast) .what-now .activity-item a {
   background: transparent !important;
 }
 
-/* **************** Recommandations ***************/ 
+/* **************** Recommandations ***************/
 #recommendations a {
   color: white !important;
   text-decoration: none;
@@ -880,8 +910,9 @@ body:not(.whiteContrast) .what-now .activity-item a {
   background-repeat: no-repeat;
 }
 
-.footer img {
-  width: 26%;
+body .footer img {
+  margin-top: 4%;
+  max-width: 15%;
 }
 
 .footer .social-icon {

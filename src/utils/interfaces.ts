@@ -1,6 +1,6 @@
 import { JSX } from "react";
 
-export interface ILogoArray {
+export interface ILogo {
   img: string;
   title: string;
   alt: string;
@@ -31,14 +31,16 @@ export interface IRecommendation {
   role: string;
   text: string;
   img: string;
-  letter: string
+  letter: string;
 }
 
 export interface IActivities {
   title: string;
-  description?: string;
+  description: string;
   icon: any;
   link?: string;
+  hiddenText?: string;
+  short?: string;
 }
 
 export interface IProjectsData {
@@ -61,4 +63,5 @@ export interface ITimeLineElements {
   image?: string;
   alt?: string;
   href?: string;
+  hiddenText?: string;
 }

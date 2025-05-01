@@ -73,7 +73,7 @@ export function Banner() {
                     }
                   >
                     <span className="tagline">Welcome to my Portfolio</span>
-                    <h1>
+                    <h1 className="main-header">
                       {`Hi! I'm Aviv, A `}
                       <span
                         className="txt-rotate"
@@ -94,6 +94,7 @@ export function Banner() {
                       overlay={<Tooltip>Message me in Linkedin</Tooltip>}
                     >
                       <button
+                        role="link"
                         onClick={openLinkedInMessage}
                         aria-label="Message me on Linkedin - External link"
                       >

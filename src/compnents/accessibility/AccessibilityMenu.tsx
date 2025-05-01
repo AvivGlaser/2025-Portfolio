@@ -4,6 +4,9 @@ import { IAccessibilityMenu } from "../../utils/interfaces";
 import {
   accessibilityButtons,
   handleAccessibilityClasses,
+  giveFocusToFocusableElements,
+  handleActive,
+  setLogo,
 } from "../../utils/screenReader";
 import "./Accessibility.css";
 
@@ -20,24 +23,29 @@ export default function AccessibilityMenu(props: IAccessibilityMenu) {
           <CloseButton
             aria-label="Close accessibility menu dialog"
             className="close dialog-close dialog-button"
-            onClick={() => props.setIsVisible()}
+            onClick={() => {
+              props.setIsVisible();
+              giveFocusToFocusableElements();
+            }}
           />
         </Col>
       </Row>
       <Container>
         {accessibilityButtons.map((btn) => {
           return (
-            <Row key={btn.label}>
-              <Button
-                aria-label={btn.ariaLabel}
-                className={`${btn.class} dialog-button`}
-                onClick={() => {
-                  handleAccessibilityClasses(btn.type);
-                }}
-              >
-                {btn.label}
-              </Button>
-            </Row>
+            <Button
+              key={btn.label}
+              aria-pressed={false}
+              aria-label={btn.ariaLabel}
+              className={`${btn.class} dialog-button`}
+              onClick={(e) => {
+                handleAccessibilityClasses(btn.type);
+                handleActive(e);
+                setLogo(btn.type);
+              }}
+            >
+              {btn.label}
+            </Button>
           );
         })}
       </Container>

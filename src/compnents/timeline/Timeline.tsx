@@ -5,7 +5,7 @@ import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import timelineElements, {  } from "./timelineElements";
+import timelineElements from "./timelineElements";
 
 import "react-vertical-timeline-component/style.min.css";
 import { ITimeLineElements } from "../../utils/interfaces";
@@ -41,17 +41,22 @@ export default function Timeline() {
                   className="timeline-image"
                 ></img>
               </div>
-              <p id="description" className="timeline-p">{element.description}</p>
-                <a
-                  target={isWorkIcon ? "_self" : "_blank" }
-                  rel="noopener noreferrer"
-                  className={`button ${
-                    isWorkIcon ? "workButton" : "schoolButton"
-                  }`}
-                  href={element.href}
-                >
-                  {element.buttonText}
-                </a>
+              <p id="description" className="timeline-p">
+                {element.description}
+              </p>
+              <a
+                target={isWorkIcon ? "_self" : "_blank"}
+                rel="noopener noreferrer"
+                className={`button ${
+                  isWorkIcon ? "workButton" : "schoolButton"
+                }`}
+                href={element.href}
+              >
+                {element.buttonText}
+                <span className="screen-reader-element">
+                 &nbsp; {element.hiddenText}
+                </span>
+              </a>
             </VerticalTimelineElement>
           );
         })}

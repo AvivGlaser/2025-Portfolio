@@ -2,11 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { activities } from "./whatNowData";
 
-
 export default function WhatNow() {
-
   return (
-    <section className="what-now" id="what-now" >
+    <section className="what-now" id="what-now">
       <Container fluid className="what-now py-5">
         <Row className="justify-content-center mb-5">
           <Col md={8} className="text-center">
@@ -38,7 +36,10 @@ export default function WhatNow() {
                         rel="noopener noreferrer"
                         className="activity-link"
                       >
-                        Check it
+                        {activity.short ? "Let's Connect" : "Check it"}
+                        <span className="screen-reader-element">
+                          &nbsp; {activity.hiddenText}
+                        </span>
                       </a>
                     )}
                   </div>
