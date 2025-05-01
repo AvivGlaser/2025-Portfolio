@@ -190,11 +190,19 @@ body:not(.whiteContrast, .screenReader)
   margin: 1.75%;
 }
 
+body.blackContrast.screenReader:not(.whiteContrast)
+  .btn.btn-primary:not(:focus) {
+  border-color: white;
+}
+body.whiteContrast.screenReader .btn.btn-primary:not(:focus) {
+  border-color: rgb(0, 0, 0);
+}
+
 body.blackContrast.screenReader
   .accessibility-menu-dialog
   button.dialog-button:not(.close, .cancel-button) {
   /* border: 2px solid black !important; */
-  /* border-color: black !important; */
+  /* border-color: white !important; */
   border-radius: 10px !important;
   width: 135px !important;
   margin: 1.75% !important;
@@ -417,11 +425,15 @@ body.whiteContrast .footer {
   opacity: 1;
 }
 
-.screenReader .proj-imgbx:focus-within .proj-txtx {
+.whiteContrast .proj-imgbx:focus-within .proj-txtx,
+.blackContrast .proj-imgbx:focus-within .proj-txtx {
   background-color: black !important;
 }
 
-.screenReader #recommendations div.react-multi-carousel-list button,
+.screenReader
+  #recommendations
+  div.react-multi-carousel-list
+  button:not(.recommendation-letter),
 .screenReader .carousel-button-group > button.carousel-arrow {
   display: none !important;
 }
@@ -429,16 +441,11 @@ body.whiteContrast .footer {
   overflow: hidden !important;
 }
 
-.screenReader #recommendations div.react-multi-carousel-list button,
-li.react-multi-carousel-item[data-index="4"],
-.screenReader #recommendations div.react-multi-carousel-list button,
-li.react-multi-carousel-item[data-index="5"],
-.screenReader #recommendations div.react-multi-carousel-list button,
-li.react-multi-carousel-item[data-index="6"],
-.screenReader #recommendations div.react-multi-carousel-list button,
-li.react-multi-carousel-item[data-index="7"],
-.screenReader #recommendations div.react-multi-carousel-list button,
-li.react-multi-carousel-item[data-index="8"] {
+.screenReader li.react-multi-carousel-item[data-index="4"],
+.screenReader li.react-multi-carousel-item[data-index="5"],
+.screenReader li.react-multi-carousel-item[data-index="6"],
+.screenReader li.react-multi-carousel-item[data-index="7"],
+.screenReader li.react-multi-carousel-item[data-index="8"] {
   display: none !important;
 }
 
@@ -450,7 +457,12 @@ li.react-multi-carousel-item[data-index="8"] {
   transition: unset !important;
 }
 
-.screenReader div:focus-within .proj-imgbx::before {
+.screenReader
+  #slideInUp
+  > .tab-pane
+  > .row
+  > div:focus-within
+  .proj-imgbx::before {
   content: "";
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
   opacity: 0.85;
@@ -458,6 +470,7 @@ li.react-multi-carousel-item[data-index="8"] {
   width: 100%;
   height: 0;
   transition: 0.4s ease-in-out;
+  height: 100%;
 }
 
 .screenReader .banner img {

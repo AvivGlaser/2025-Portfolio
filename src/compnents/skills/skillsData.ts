@@ -20,8 +20,8 @@ export const responsive = {
 
 export const techSkills: Array<ILogo> = [
   { img: reactLogo, title: "React", alt: "react-logo" },
-  { img: javascriptLogo, title: "Javascript", alt: "javascript-logo" },
-  { img: typescriptLogo, title: "Typescript", alt: "typescript-logo" },
+  { img: javascriptLogo, title: "JavaScript", alt: "javascript-logo" },
+  { img: typescriptLogo, title: "TypeScript", alt: "typescript-logo" },
   { img: reduxLogo, title: "Redux", alt: "redux-logo" },
   {
     img: expressJsLogo,

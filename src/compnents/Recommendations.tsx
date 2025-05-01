@@ -16,6 +16,7 @@ export function Recommendations() {
       text: "Besides being very thorough and responsible, Aviv makes me laugh a lot — my days are so much more enjoyable with him around.",
       img: ron,
       letter: "/rec-letter-ron.docx",
+      hiddenText: "by Ron  - download word document",
     },
     {
       name: "Naor Bacharlia",
@@ -23,6 +24,7 @@ export function Recommendations() {
       text: "Aviv communicates client-side issues to our customers with detailed documentation, as well as resolving urgent accessibility matters on the spot.",
       img: naor,
       letter: "/rec-letter-naor.docx",
+      hiddenText: "by Naor  - download word document",
     },
     {
       name: "Alona Elazari",
@@ -30,6 +32,7 @@ export function Recommendations() {
       text: "During his work, Aviv built personal and meaningful connections with his apprentices, showing responsibility, dedication, and initiative.",
       img: alona,
       letter: alona_rec,
+      hiddenText: "By Alona - download image ",
     },
     {
       name: "Fabian Bensik",
@@ -37,6 +40,7 @@ export function Recommendations() {
       text: "Aviv led by example serving children and their parents needs. He did so with warmth, calmness, attentive listening, and genuine care.",
       img: fabian,
       letter: "/rec-letter-fabian.doc",
+      hiddenText: "By Fabian - download word document",
     },
   ];
 
@@ -78,11 +82,16 @@ export function Recommendations() {
               ></img>{" "}
               <br />
               <Button
-                className="contact-reco"
+                className="recommendation-letter"
                 aria-label={`Contact ${rec.name} & watch full letter`}
+                tabIndex={-1}
               >
                 <a href={rec.letter} download>
                   Full Letter & Contact Info
+                  <span className="screen-reader-element">
+                    {" "}
+                    &nbsp; {rec.hiddenText}
+                  </span>
                 </a>
               </Button>
             </div>

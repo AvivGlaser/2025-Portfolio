@@ -137,9 +137,13 @@ body.mobile nav.navbar {
   width: 90% !important;
 }
 
-body.mobile nav.navbar > .container {
-  justify-content: space-evenly !important;
+body.mobile .navbar-expand-md:has(.show) {
+  background-color: #121212;
 }
+
+/* body.mobile nav.navbar > .container {
+  justify-content: space-evenly !important;
+} */
 
 nav.navbar {
   padding: 1%;
