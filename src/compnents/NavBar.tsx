@@ -13,7 +13,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { handleFocusInDialog, handleMainMenu } from "../utils/screenReader";
-import { handleResize } from "../utils/view";
+import { appOrBrowser, handleResize } from "../utils/view";
 
 export function NavBar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -156,13 +156,10 @@ export function NavBar() {
                   >
                     <button
                       role="link"
-                      aria-label="Emain me on Gmail - External link"
+                      aria-label="Email me on Gmail - External link"
                       className="email-me"
                       onClick={() => {
-                        window.open(
-                          "https://mail.google.com/mail/?view=cm&fs=1&to=wcwaviv@gmail.com&su=Hey%20Aviv%2C%20I%20have%20an%20open%20role%20that%20might%20fit%20for%20you!&body=Hi%20Aviv%2C%0A%0AI%20came%20across%20your%20profile%20and%20wanted%20to%20reach%20out%20about%20an%20exciting%20opportunity.%20Let%20me%20know%20if%20you%27re%20interested!%0A%0ABest%2C%0A[Your%20Name]",
-                          "_blank"
-                        );
+                        appOrBrowser()
                       }}
                     >
                       <span>

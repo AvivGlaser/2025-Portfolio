@@ -6,7 +6,7 @@ body.mobile nav.navbar {
 
 body.mobile .navbar > .container {
   justify-content: flex-start;
-  gap: min(3%, 0.5rem);
+  /* gap: min(3%, 0.5rem); */
   padding-inline: 1.5rem;
 }
 
@@ -119,6 +119,7 @@ select:focus {
 }
 
 main h2 {
+  padding: 0.5%;
   font-size: 35px;
   font-weight: 700;
   text-align: center;
@@ -133,7 +134,7 @@ main p {
 }
 
 body:not(.whiteContrast) section:not(.banner) {
-  background: linear-gradient(81deg, #0f021cd9, #0a090a) !important;
+  background: linear-gradient(273deg, #0f021cd9, #0a090a) !important;
 }
 
 .tooltip {
@@ -145,13 +146,18 @@ body:not(.mobile) #basic-navbar-nav {
 }
 
 body .scrolled > .container > a > .logo-img {
-  max-width: 65px;
+  max-width: 80px;
   padding: 1%;
 }
 body nav:not(.scrolled) .logo-img {
   padding: 1%;
-  max-width: 90px;
+  max-width: 80px;
 }
+
+body header .logo-img.white-logo {
+  max-width: 70px !important;
+}
+
 body:not(.mobile) .navbar > .container {
   justify-content: space-evenly !important;
 }

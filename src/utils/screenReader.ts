@@ -1,6 +1,5 @@
 import { IAccessibilityButtons } from "./interfaces";
-import whiteLogo from "../assets/img/aviv-glaser-white-contrast.png";
-import blackLogo from "../assets/img/aviv-glaser.png";
+
 
 const focusableElements: string = `h1, h2, h3, h4, h5, h6, a:not([disabled],.nav-link:not(.active) ), button:not([disabled], .recommendation-letter,[aria-disabeld=true]), input:not([disabled]), textarea:not([disabled]), select:not([disabled])`;
 const positiveTabIndexValue: number = 20;
@@ -77,15 +76,7 @@ export function handleAccessibilityClasses(btnType: string) {
   }, 150);
 }
 
-export function setLogo(bodyClass: string) {
-  if (bodyClass === "white") {
-    document.querySelector("header .logo-img")?.setAttribute("src", whiteLogo);
-    document.querySelector("footer .logo-img")?.setAttribute("src", whiteLogo);
-  } else {
-    document.querySelector("header .logo-img")?.setAttribute("src", blackLogo);
-    document.querySelector("footer .logo-img")?.setAttribute("src", blackLogo);
-  }
-}
+
 
 export function handleActive(e: any): void {
   const blackButton = document.querySelector(".black-button") as HTMLElement;
