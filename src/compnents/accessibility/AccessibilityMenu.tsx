@@ -6,9 +6,9 @@ import {
   handleAccessibilityClasses,
   giveFocusToFocusableElements,
   handleActive,
-  setLogo,
 } from "../../utils/screenReader";
 import "./Accessibility.css";
+import { setLogo } from "../../utils/view";
 
 export default function AccessibilityMenu(props: IAccessibilityMenu) {
   return (
@@ -41,7 +41,7 @@ export default function AccessibilityMenu(props: IAccessibilityMenu) {
               onClick={(e) => {
                 handleAccessibilityClasses(btn.type);
                 handleActive(e);
-                setLogo(btn.type);
+                setLogo();
               }}
             >
               {btn.label}
