@@ -7,13 +7,13 @@ body.mobile nav.navbar {
 body.mobile .navbar > .container {
   justify-content: flex-start;
   /* gap: min(3%, 0.5rem); */
-  padding-inline: 1.5rem;
+  padding-inline: 2rem;
 }
 
 body.mobile .navbar.scrolled > .container {
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: min(3%, 2.5rem);
+  /* gap: min(3%, 2.5rem); */
 }
 
 body.mobile .navbar-expand-md:has(.show) {
@@ -144,6 +144,18 @@ body:not(.whiteContrast) section:not(.banner) {
 body:not(.mobile) #basic-navbar-nav {
   justify-content: space-around;
 }
+body:not(.mobile) .navbar > .container {
+  justify-content: space-evenly !important;
+}
+
+nav.navbar {
+  padding: 1%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  transition: 0.32s ease-in-out;
+}
 
 body .scrolled > .container > a > .logo-img {
   max-width: 80px;
@@ -158,21 +170,8 @@ body header .logo-img.white-logo {
   max-width: 70px !important;
 }
 
-body:not(.mobile) .navbar > .container {
-  justify-content: space-evenly !important;
-}
-
 .navbar > .container > .navbar-brand {
   margin: 0;
-}
-
-nav.navbar {
-  padding: 1%;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 9999;
-  transition: 0.32s ease-in-out;
 }
 
 nav.navbar.scrolled {
