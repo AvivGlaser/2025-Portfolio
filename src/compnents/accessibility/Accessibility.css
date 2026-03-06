@@ -1,0 +1,506 @@
+/* ACCESIBILITY MENU */
+
+.accessibility-menu-dialog .close {
+  float: right !important;
+  margin: 1.5px !important;
+  opacity: 1 !important;
+}
+
+.accessibility-menu-dialog .dialog-button:not(.cancel-button) {
+  font-size: 0.85em !important;
+}
+.accessibility-menu-dialog {
+  max-width: 200px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 1em;
+  left: 7em;
+  transform: translateX(-50%) translateY(100%);
+  background-color: #2b2424;
+  border-radius: 1em;
+  padding: 0.8em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
+  z-index: 1050;
+}
+
+body:not(.whiteContrast) .accessibility-menu-dialog.show.container {
+  border: 1.5px solid !important;
+}
+
+.accessibility-menu-dialog.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  flex-direction: column;
+  gap: 0.4em;
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0s;
+}
+
+.accessibility-menu-dialog.hide {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(100%);
+  transition: opacity 0.4s ease-out, transform 0.5s ease-out, visibility 0s 0.4s;
+}
+
+.accessibility-menu-dialog .row:has(.cancel-button) {
+  margin-top: 3.5%;
+  margin-left: 1.5%;
+}
+
+.cancel-button {
+  width: 50%;
+  padding: 0.4em 1em;
+  font-size: 0.8em;
+  background-color: #b81010;
+  color: white;
+  border-radius: 1em;
+  transition: background-color 0.3s ease;
+  display: block;
+  border-color: unset;
+  float: left;
+}
+.btn-primary.active:focus {
+  box-shadow: unset !important;
+}
+
+.cancel-button:hover {
+  background-color: #fd2222;
+  border-color: unset;
+}
+
+.accessibility-menu-dialog .col {
+  padding-left: 25px;
+  padding-top: 5px;
+}
+
+.accessibility-menu-dialog > .row:has(.cancel-button) {
+  max-width: 90%;
+}
+body:not(.blackContrast, .whiteContrast)
+  .accessibility-menu-dialog
+  > .container
+  button.dialog-button {
+  background: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  ) !important;
+}
+
+.accessibility-menu-dialog .dialog-button:not(.cancel-button, .close, .active) {
+  border: none;
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+.accessibility-menu-dialog > .container {
+  display: grid;
+  align-content: space-around;
+  justify-content: center;
+}
+
+button.social-icon.accessibility-button {
+  margin-right: 1%;
+  padding: 0;
+}
+
+.accessibility-logo {
+  width: 25px;
+}
+
+/* ~~~~~~~~~~ BLACK CONTRAST ~~~~~~~~~~~  */
+
+body.blackContrast .date.vertical-timeline-element-date {
+  opacity: 1 !important;
+  color: white !important;
+}
+body.blackContrast nav.navbar .navbar-nav .nav-link.navbar-link {
+  opacity: 1 !important;
+}
+
+/* BACKGROUND  */
+
+body.blackContrast .project .nav.nav-pills .nav-link::before {
+  background: black !important;
+}
+
+.blackContrast .proj-imgbx:focus-within .proj-txtx,
+body.blackContrast .accessibility-menu-dialog.show.container,
+body.blackContrast #root .App nav.navbar {
+  background-color: black !important;
+}
+body.blackContrast #recommendations .container button,
+body.blackContrast .vertical-timeline-element-icon.shadow-size-small.bounce-in {
+  background: gold !important;
+}
+
+body.blackContrast
+  nav
+  > .container
+  > .accessibility-menu-dialog
+  > .container
+  > button.active {
+  background-color: black !important;
+  color: gold !important;
+}
+
+body.blackContrast #timeline a,
+body.blackContrast .accessibility-menu-dialog.show.container button {
+  background-color: gold !important;
+  color: black !important;
+}
+
+/* COLOR  */
+body.blackContrast #recommendations a,
+body.blackContrast #recommendations .container button::before,
+body.blackContrast #recommendations .container button {
+  color: black !important;
+}
+
+body.blackContrast footer p,
+body.blackContrast .animate__animated p,
+body.blackContrast .skill-bx p,
+body.blackContrast .banner p {
+  color: white !important;
+}
+body.blackContrast a.active {
+  font-weight: bold !important;
+  color: gold !important;
+}
+
+/* BORDER */
+
+body.blackContrast footer {
+  border-top: 1px solid white !important;
+}
+body.blackContrast .navbar {
+  border-bottom: 1px solid white !important;
+}
+
+body:not(.whiteContrast, .screenReader)
+  .accessibility-menu-dialog
+  button.active {
+  border: 2px solid white !important;
+  border-color: white !important;
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+
+body.blackContrast.screenReader:not(.whiteContrast)
+  .btn.btn-primary:not(:focus) {
+  border-color: white;
+}
+body.whiteContrast.screenReader .btn.btn-primary:not(:focus) {
+  border-color: rgb(0, 0, 0);
+}
+
+body.blackContrast.screenReader
+  .accessibility-menu-dialog
+  button.dialog-button:not(.close, .cancel-button) {
+  border-radius: 10px !important;
+  width: 135px !important;
+  margin: 1.75% !important;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~ WHITE CONTRAST ~~~~~~~~~~~~~~~~~~*/
+
+/* .whiteContrast .banner {
+  background-image: url("/src//assets/img/white-banner-bg.png");
+} */
+body.whiteContrast .date.vertical-timeline-element-date {
+  opacity: 1 !important;
+  color: white !important;
+}
+body.whiteContrast nav.navbar .navbar-nav .nav-link.navbar-link {
+  opacity: 1 !important;
+}
+
+/* BACKGROUND */
+
+body.whiteContrast section#recommendations {
+  background-image: url("/src/assets/img/color-sharp.png");
+  background-repeat: no-repeat;
+}
+body.whiteContrast section#what-not {
+  background-image: url("/src/assets/img/color-sharp2.png");
+}
+
+body.whiteContrast .banner .tagline {
+  background: linear-gradient(
+    90.21deg,
+    rgb(245 245 245 / 50%) -5.91%,
+    rgb(43 79 196 / 50%) 111.58%
+  );
+}
+body.whiteContrast .proj-imgbx::before {
+  background: linear-gradient(
+    90.21deg,
+    #092966 -5.91%,
+    #4a2fbd 111.58%
+  ) !important;
+}
+
+.whiteContrast .proj-imgbx:focus-within .proj-txtx {
+  background-color: black !important;
+}
+
+body.whiteContrast .vertical-timeline::before {
+  background: black !important;
+}
+
+body.whiteContrast
+  nav
+  > .container
+  > .accessibility-menu-dialog
+  > .container
+  > button.active {
+  background-color: white !important;
+  color: midnightblue !important;
+}
+
+body.whiteContrast #root .App nav.navbar {
+  border-bottom: 1px solid black !important;
+  background-color: white !important;
+
+}
+
+body.whiteContrast .accessibility-menu-dialog.show.container {
+  border: 1.5px solid black !important;
+  background-color: white !important;
+}
+
+body.whiteContrast .skill-bx,
+body.whiteContrast #recommendations .container button,
+body.whiteContrast .vertical-timeline-element-icon.shadow-size-small.bounce-in {
+  background: midnightblue !important;
+}
+
+body.whiteContrast .project .nav.nav-pills .nav-link.active,
+body.whiteContrast
+  .vertical-timeline-element-content.bounce-in
+  *:not(a, button, .date, .vertical-timeline-element-content-arrow),
+body.whiteContrast .vertical-timeline-element-content.bounce-in,
+body.whiteContrast #projects .container .row .nav-link.active::before,
+body.whiteContrast #projects .container .row .nav-link.active,
+body.whiteContrast
+  .accessibility-menu-dialog.show.container
+  button:not(.close) {
+  background-color: midnightblue !important;
+  color: white !important;
+}
+
+body.whiteContrast #timeline a {
+  background-color: white !important;
+  color: midnightblue;
+}
+
+body.whiteContrast .nav-pills > .nav-item {
+  background-color: rgb(221 214 214 / 49%) !important;
+}
+
+/* COLOR  */
+
+body.whiteContrast svg * {
+  fill: white !important;
+}
+
+body.whiteContrast .what-now path,
+body.whiteContrast .banner path,
+body.whiteContrast .animate__animated.animate__fadeIn > button > svg > path {
+  fill: black !important;
+}
+body.whiteContrast footer p,
+body.whiteContrast .skill-bx p,
+body.whiteContrast span.date,
+body.whiteContrast #recommendations .container button::before,
+body.whiteContrast #recommendations .container button {
+  color: white !important;
+}
+
+body.whiteContrast .project .nav.nav-pills .nav-link:not(.active),
+body.whiteContrast:not(.mobile)
+  .vertical-timeline-element-content.bounce-in
+  .date,
+body.whiteContrast .what-now a.activity-item,
+body.whiteContrast section:not(#skills, #timeline, #projects) h3,
+body.whiteContrast section:not(#skills) h2,
+body.whiteContrast main p,
+body.whiteContrast h1,
+body.whiteContrast .banner button,
+body.whiteContrast .banner .tagline,
+body.whiteContrast .banner p,
+body.whiteContrast .animate__animated.animate__fadeIn > button,
+body.whiteContrast .txt-rotate > .wrap,
+body.whiteContrast .animate__animated > span.tagline,
+body.whiteContrast .animate__animated p,
+body.whiteContrast .animate__animated h1,
+body.whiteContrast .email-me,
+body.whiteContrast header .nav-link {
+  color: black !important;
+}
+
+body.whiteContrast #what-now a,
+body.whiteContrast a.active {
+  font-weight: bold !important;
+  color: midnightblue !important;
+}
+
+/* BORDER  */
+
+body.whiteContrast .activity-content {
+  border: 1px solid black !important;
+}
+
+body.whiteContrast:not(.blackContrast, .screenReader)
+  .accessibility-menu-dialog
+  button.active {
+  border: 2px solid black !important;
+  border-color: black !important;
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+body.whiteContrast.screenReader .accessibility-menu-dialog button.active {
+  border-radius: 10px;
+  width: 135px;
+  margin: 1.75%;
+}
+
+body.whiteContrast .vertical-timeline-element-content-arrow {
+  background-color: transparent !important;
+  border: 7px solid transparent !important;
+  border-right: 7px solid #000000 !important;
+}
+
+body.whiteContrast .what-now .activity-content,
+body.whiteContrast .email-me {
+  border: 1px solid black !important;
+}
+
+body.whiteContrast footer {
+  border-top: 1px solid black !important;
+}
+body.whiteContrast .navbar {
+  border-bottom: 1px solid black !important;
+}
+
+/* FILTER  */
+
+body.whiteContrast .logo-img {
+  filter: none !important;
+}
+
+body:not(.blackContrast, .whiteContrast) .accessibility-menu-dialog .close {
+  filter: invert(1) !important;
+}
+body.whiteContrast header div.social-icon > a,
+body.whiteContrast .accessibility-logo {
+  filter: invert(1) !important;
+}
+
+body.whiteContrast .footer path {
+  fill: black !important;
+}
+
+body.whiteContrast .footer {
+  background-image: url("/src/assets/img/footer-bg-white.png");
+}
+
+/* ~~~~~~~~~~~~~ SCREEN READER  ~~~~~~~~~~~~~~~~~~~*/
+
+body.screenReader *:focus {
+  border: 2px solid rgb(29, 247, 0) !important;
+  outline: none !important;
+}
+
+.screenReader button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.screenReader .cancel-button:focus {
+  background-color: #b81010 !important;
+}
+
+.screenReader .proj-imgbx:focus-within .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+
+.screenReader
+  #recommendations
+  div.react-multi-carousel-list
+  button:not(.recommendation-letter),
+.screenReader .carousel-button-group > button.carousel-arrow {
+  display: none !important;
+}
+.screenReader .react-multi-carousel-list {
+  overflow: hidden !important;
+}
+
+.screenReader li.react-multi-carousel-item[data-index="4"],
+.screenReader li.react-multi-carousel-item[data-index="5"],
+.screenReader li.react-multi-carousel-item[data-index="6"],
+.screenReader li.react-multi-carousel-item[data-index="7"],
+.screenReader li.react-multi-carousel-item[data-index="8"] {
+  display: none !important;
+}
+
+.screenReader #recommendations div.react-multi-carousel-list,
+.screenReader #recommendations ul.react-multi-carousel-track,
+.screenReader .owl-carousel.skill-slider > ul,
+.screenReader .owl-carousel.skill-slider {
+  transform: unset !important;
+  transition: unset !important;
+}
+
+.screenReader
+  #slideInUp
+  > .tab-pane
+  > .row
+  > div:focus-within
+  .proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: 0.4s ease-in-out;
+  height: 100%;
+}
+
+.screenReader .banner img {
+  animation: unset !important;
+}
+
+body.screenReader .proj-imgbx:focus-within .hidden-text,
+.screen-reader-element {
+  opacity: 0;
+  position: absolute;
+  width: 1;
+  height: 1;
+  padding: 0;
+  margin: -1;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*  ~~~~~~~~~~~~~~ Large Font ~~~~~~~~~~~~~~~ */
+body.largeFont .proj-txtx span {
+  font-size: 22px !important;
+}
+body.largeFont .activity-item a,
+body.largeFont .date,
+body.largeFont nav.navbar .navbar-nav .nav-link.navbar-link {
+  font-size: 17.5px !important;
+}
+body.largeFont p {
+  font-size: xx-large !important;
+}
